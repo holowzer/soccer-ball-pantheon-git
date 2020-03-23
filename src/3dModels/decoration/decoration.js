@@ -1,0 +1,1 @@
+console.log('ici se trouvent les décos. ajouter des nouveaux js files pour chaque nouveau set de décos ? ')
