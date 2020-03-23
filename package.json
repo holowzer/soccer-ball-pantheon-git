@@ -27,7 +27,7 @@
     "watch": "webpack --mode=dev --watch --config ./bundler/webpack.config.js"
   },
   "keywords": [],
-  "author": "team88",
+  "author": "team8",
   "license": "ISC",
   "description": "- Basic files support (HTML, CSS, Stylus, JS, Images, Fonts)\r - Extracted CSS\r - Transpilled JS (with Babel)\r - Sourcemaps\r - Clean dist\r - Dev server (with local network support)\r - Static Files\r - Cache breaker",
   "repository": {
