@@ -10,12 +10,16 @@ stay tuned and follow the experience !
 
 TOOLS - - - - - - - - - -
 scenejs , stylus
+
 js,css,html
+
 webpack config
+
 webGL and ThreeJs
 
 fonts used : 
 MANROPE found on AWWWARDS WEBSITE https://www.awwwards.com/sites/manrope-font
+
 BON VOYAGE https://www.dafont.com/made-bon-voyage.font
 
 take care of these ;)
