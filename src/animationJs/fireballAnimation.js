@@ -1,0 +1,1 @@
+console.log('here will be the landing page cursor and overall animations')
