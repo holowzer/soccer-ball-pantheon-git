@@ -77,3 +77,52 @@ const FakeLoad = new Scene({
     easing : "cubic-bezier(.7,.31,0.3,.86)"
 }
 ).playCSS()
+
+
+// making the transition when we click on start the experience 
+
+
+const ExperienceStarter= new Scene({
+    ".globalWindow" : {
+        0 : {
+            opacity : 1  , 
+            transform : "translateY(0)"        
+        },
+         0.8: {
+            opacity : 1,
+            transform : "translateY(0)" 
+        },
+        1.5 : {
+            opacity : 0,
+            transform : "translateY(0)" 
+        },
+        3 : {
+            opacity : 0,
+            transform : "translateY(-100vh)"        
+
+        },
+    },
+    ".balloonWorld" : {
+        0 : {
+            opacity : 0
+        },
+        3 : {
+            opacity : 0
+        },
+        3.5 : {
+            opacity : 1
+        },
+    },
+},{
+        selector : true,
+    easing : "cubic-bezier(.7,.31,0.3,.86)"
+
+}
+)
+
+
+
+
+document.querySelector('.experienceStarter').addEventListener('click', ()=>{
+    ExperienceStarter.playCSS()
+})

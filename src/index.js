@@ -72,7 +72,7 @@ scene.add(camera)
 /**
  * Renderer
  */
-const renderer = new THREE.WebGLRenderer()
+const renderer = new THREE.WebGLRenderer()  
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(window.devicePixelRatio)
 document.body.appendChild(renderer.domElement)
@@ -103,3 +103,6 @@ const loop = () =>
 }
 
 loop()
+
+document.querySelector('.balloonWorld').appendChild(renderer.domElement)
+renderer.domElement.classList.add('ballCanvas')
