@@ -1,3 +1,3 @@
 import './style/main.styl'
-
-console.log('Hello Webpack')
+import './animationJs/sceneController'
+import './animationJs/fireballAnimation'
