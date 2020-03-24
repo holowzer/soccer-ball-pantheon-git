@@ -49,7 +49,14 @@
 
         height 100%
         nav 
-            display: none
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            color: white
+            position: fixed
+            padding-left: 30px
+            letter-spacing: 10px
+            font-weight: lighter
         .radialSun 
                 position absolute
                 z-index: 1
@@ -70,11 +77,28 @@
             justify-content center
             opacity 0
             flex-direction: column
-            perspective: 800px
+            perspective: 600px
             align-items center
+            .experienceStarter
+                border-radius: 1000px
+                border:  #ff7300 1px solid 
+                background #000
+                display flex
+                justify-content: center
+                align-items: center
+                color: white
+                width 120px
+                height 120px
+                position absolute
+                font-size: 12px
+                right 60px
+                cursor: pointer
+                bottom: 60px
             h2
                 font-size: 120px
-                mix-blend-mode: multiply
+                z-index 5
+                position relative
+                pointer-events: none
                 font-weight: lighter
                 color: white
                 line-height: 110px

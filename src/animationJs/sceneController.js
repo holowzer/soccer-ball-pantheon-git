@@ -58,17 +58,22 @@ const FakeLoad = new Scene({
     },
     ".beforeExperienceSas" : {
         0:{
-            opacity : 0
+            opacity : 0,
+            transform : "translateY(-50px)"
         },
         4.3:{
-            opacity : 0
+            opacity : 0,
+            transform : "translateY(-50px)"
+
         },
         5:{
-            opacity : 1
+            opacity : 1,
+            transform : "translateY(0px)"
+
         },
     },
 },{
     selector : true,
-    easing : "ease-out"
+    easing : "cubic-bezier(.7,.31,0.3,.86)"
 }
 ).playCSS()
