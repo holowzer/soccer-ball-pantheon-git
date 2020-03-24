@@ -46,6 +46,7 @@
     .globalWindow
         background #000 
         width 100%
+
         height 100%
         nav 
             display: none
@@ -62,12 +63,18 @@
                 background: radial-gradient(circle, rgba(255,115,0,0.643207624846813) 0%, rgba(255,151,24,0) 56%, rgba(255,127,0,0) 100%);
         .beforeExperienceSas
             display flex
+            width 100%
+            height 100%
+            position relative
+            overflow hidden
             justify-content center
             opacity 0
             flex-direction: column
+            perspective: 800px
             align-items center
             h2
                 font-size: 120px
+                mix-blend-mode: multiply
                 font-weight: lighter
                 color: white
                 line-height: 110px
