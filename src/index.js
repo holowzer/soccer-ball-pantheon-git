@@ -3,7 +3,12 @@ import './animationJs/sceneController'
 import './animationJs/fireballAnimation'
 import './style/main.styl'
 import * as THREE from 'three'
-import Ball from './javascript/ball.js'
+import Allen from './javascript/Allen.js'
+import Golden from './javascript/Golden.js'
+import Classic from './javascript/Classic.js'
+import Mikasa from './javascript/Mikasa.js'
+import Teamgeist from './javascript/Teamgeist.js'
+import Cafusa from './javascript/Cafusa.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {TweenMax,Elastic,SteppedEase} from "gsap"
 import  {allParticles,StoneBuild} from './javascript/aroundFloatingPoints.js'
@@ -47,14 +52,34 @@ globalLight.position.set( -8, -8, 10 );
 scene.add( globalLight );
 
 
-const ball = new Ball()
-// scene.add(ball.group)
 
 
 // IL FAUDRA AJOUTER TOUTES LES 
 // BALLLES ICI ET REMPLACER LES SPHERES PAR LES BALLES 
 
+//Allen Ball
+const allen = new Allen()
+scene.add(allen.group)
 
+//Golden Ball
+const golden = new Golden()
+scene.add(golden.group)
+
+//Mikasa Ball
+const mikasa = new Mikasa()
+scene.add(mikasa.group)
+
+//Classic ball
+const classic = new Classic()
+scene.add(classic.group)
+
+//Teamgeist Ball
+const teamgeist = new Teamgeist()
+scene.add(teamgeist.group)
+
+//Cafusa Ball
+const cafusa = new Cafusa()
+scene.add(cafusa.group)
 
 
 
@@ -62,19 +87,14 @@ const spaceRatio= 3
 const sphereGeo = new THREE.SphereGeometry(5,32,32)
 const blue = new THREE.MeshLambertMaterial({color : 0x552227})
 const red = new THREE.MeshLambertMaterial({color : 0x12312a})
-const sphere1 = new THREE.Mesh(sphereGeo,blue)
-const sphere2 =  new THREE.Mesh(sphereGeo,red)
-const sphere3 =  new THREE.Mesh(sphereGeo,blue)
-const sphere4 =  new THREE.Mesh(sphereGeo,red)
-const sphere5 =  new THREE.Mesh(sphereGeo,blue)
 const sphere6 =  new THREE.Mesh(sphereGeo,red)
-const sphere7 =  new THREE.Mesh(sphereGeo,blue)
 
 
-sphere1.position.x=-16*spaceRatio
-sphere1.position.z=10
-sphere1.scale.set(0.6,0.6,0.6)
-scene.add(sphere1)
+allen.group.position.x=-16*spaceRatio
+allen.group.position.z=10
+allen.group.scale.set(0.6,0.6,0.6)
+allen.group.rotation.y = 0.2
+scene.add(allen.group)
 
 
 const ball1Deco1=new StoneBuild(scene,-16*spaceRatio+6,1,2,0.3,"#0061ad")
@@ -86,21 +106,20 @@ ball1Deco2.createStone()
 ball1Deco3.createSphere()
 ball1Deco4.createSphere()
 
-sphere2.position.x=-8*spaceRatio
-sphere2.position.z=10
-sphere2.scale.set(0.6,0.6,0.6)
-scene.add(sphere2)
+golden.group.position.x=-8*spaceRatio
+golden.group.position.z=10
+golden.group.scale.set(0.6,0.6,0.6)
+scene.add(golden.group)
 
 const ball2Deco2=new StoneBuild(scene,-8*spaceRatio-8,-2,5,0.11,"#f48e00")
 const ball2Deco3=new StoneBuild(scene,-6*spaceRatio-7,5,13,0.11,"#cfa911")
 ball2Deco2.createStone()
 ball2Deco3.createSphere()
 
-
-sphere3.position.x=0*spaceRatio
-sphere3.position.z=10
-sphere3.scale.set(0.6,0.6,0.6)
-scene.add(sphere3)
+classic.group.position.x=0*spaceRatio
+classic.group.position.z=10
+classic.group.scale.set(0.6,0.6,0.6)
+scene.add(classic.group)
 
 const ball3Deco1=new StoneBuild(scene,0*spaceRatio-2,1,14,0.3,"#003003")
 const ball3Deco2=new StoneBuild(scene,0*spaceRatio-2,-2,5,0.11,"#003003")
@@ -109,11 +128,11 @@ ball3Deco1.createStone()
 ball3Deco2.createStone()
 ball3Deco4.createSphere()
 
-
-sphere4.position.x=8*spaceRatio
-sphere4.position.z=10
-sphere4.scale.set(0.6,0.6,0.6)
-scene.add(sphere4)
+mikasa.group.position.x=0*spaceRatio
+mikasa.group.position.z=10
+mikasa.group.scale.set(0.6,0.6,0.6)
+mikasa.group.rotation.y = 1
+scene.add(mikasa.group)
 
 const ball4Deco1=new StoneBuild(scene,8*spaceRatio+6,1,2,0.3,"#530000")
 const ball4Deco2=new StoneBuild(scene,8*spaceRatio-8,-2,5,0.11,"#6b201a")
@@ -124,10 +143,12 @@ ball4Deco2.createStone()
 ball4Deco3.createSphere()
 ball4Deco4.createSphere()
 
-sphere5.position.x=16*spaceRatio
-sphere5.position.z=10
-sphere5.scale.set(0.6,0.6,0.6)
-scene.add(sphere5)
+teamgeist.group.position.x=16*spaceRatio
+teamgeist.group.position.z=10
+teamgeist.group.scale.set(0.6,0.6,0.6)
+teamgeist.group.rotation.y = 3.3
+teamgeist.group.rotation.z = 3
+scene.add(teamgeist.group)
 
 const ball5Deco1=new StoneBuild(scene,16*spaceRatio+6,1,12,0.3,"#0061ad")
 const ball5Deco2=new StoneBuild(scene,16*spaceRatio-8,-2,5,0.11,"#0061ad")
@@ -154,10 +175,10 @@ ball6Deco2.createStone()
 ball6Deco3.createSphere()
 ball6Deco4.createSphere()
 
-sphere7.position.x=32*spaceRatio
-sphere7.position.z=10
-sphere7.scale.set(0.6,0.6,0.6)
-scene.add(sphere7)
+cafusa.group.position.x=32*spaceRatio
+cafusa.group.position.z=10
+cafusa.group.scale.set(0.6,0.6,0.6)
+scene.add(cafusa.group)
 
 const ball7Deco1=new StoneBuild(scene,32*spaceRatio+6,1,2,0.3,"#0061ad")
 const ball7Deco2=new StoneBuild(scene,32*spaceRatio-8,-2,5,0.11,"#0061ad")
@@ -207,7 +228,7 @@ renderer.domElement.classList.add('ballCanvas')
 // the textframe changer part
 const textFrameTab= document.querySelectorAll('.textPlaceHolder')
 // to change the camera focus
-const sphereTab=[sphere1,sphere2,sphere3,sphere4,sphere5,sphere6,sphere7] 
+const sphereTab=[allen.group,golden.group,classic.group,mikasa.group,teamgeist.group,sphere6,cafusa.group] 
 const gradientLayer=document.querySelectorAll('.bgGradientLayer')
 let sphereIncrementation=0
 let sphereFocus= sphereTab[sphereIncrementation]
