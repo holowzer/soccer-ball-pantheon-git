@@ -175,7 +175,7 @@ let sphereFocus= sphereTab[sphereIncrementation]
 
 
 const sceneSwitcher = ()=>{
-    if(sphereIncrementation<sphereTab.length-1){
+    if(sphereIncrementation<sphereTab.length){
         gradientLayer.forEach(Element=> {
             Element.classList.add('bgHidden')
         })
