@@ -6,9 +6,9 @@ import * as THREE from 'three'
 import Ball from './javascript/ball.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {TweenMax,Elastic,SteppedEase} from "gsap"
-import StoneBuild from './javascript/aroundFloatingPoints.js'
+import  {allParticles,StoneBuild} from './javascript/aroundFloatingPoints.js'
 var OrbitControls = require('three-orbit-controls')(THREE)
-
+// import './animationJs/particlesCursor'
 
 /**
  * Sizes
@@ -370,5 +370,32 @@ const loop = () =>
 }
 
 loop()
+window.addEventListener('click',()=>{
+    console.log(allParticles)
+})
 
+let cursorX 
+let cursorY
+let translationX
+let originalPlaceX=[]
+allParticles.forEach(element => {
+    originalPlaceX.push(element.position.x)
+});
+console.log(originalPlaceX)
+
+// get the curosor position 
+window.addEventListener('mousemove',(e)=>{
+    // i had to calm down the cursor strength in term of number size
+     cursorX = e.clientX - 750
+     cursorY = e.clientY - 150
+     translationX=cursorX/2000
+    //  animating the 3d smooth ofthe text + the little move of the ball in the back
+    for(let i=0;i<originalPlaceX.length;i++){
+        allParticles[i].position.x=originalPlaceX[i]+translationX
+    }
+
+})
+
+
+// controls = new OrbitControls(camera)
 

@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 
+let allParticles=[]
 
 class StoneBuild{
     constructor(scene,xpos,ypos,zpos,stoneSize,color){
@@ -22,6 +23,7 @@ class StoneBuild{
                 this.stone.position.y=ypos
                 this.stone.position.z=zpos
                 this.stone.scale.set(stoneSize/2,stoneSize/2,stoneSize/2)
+                allParticles.push(this.stone)
                 this.scene.add(this.stone)
                 console.log("stone created")
     
@@ -31,16 +33,16 @@ class StoneBuild{
                 this.sphere.position.y=ypos
                 this.sphere.position.z=zpos
                 this.sphere.scale.set(stoneSize/2,stoneSize/2,stoneSize/2)
+                allParticles.push(this.sphere)
                 this.scene.add(this.sphere)
                 console.log("sphere created")
+
     
             }
     }
     }
     
-    
-export default StoneBuild
-
+export {StoneBuild,allParticles}
 // sphere1.position.x=-16*spaceRatio
 // sphere1.position.z=10
 // sphere1.scale.set(0.6,0.6,0.6)
