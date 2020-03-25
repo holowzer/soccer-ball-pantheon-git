@@ -18,12 +18,11 @@ body
         width 100vw
         height 100vh
         font-family "Voyage"
-        background-image linear-gradient(red, yellow)
         padding 0
         margin 0
         .loadingScreen
             background black
-            z-index  2
+            z-index  600
             position absolute
             transform translateY(0)
             width 100%
@@ -31,7 +30,7 @@ body
             // todelete 
             // 
             // 
-            display none
+            display flex
             justify-content center
             align-items center
             flex-direction column
@@ -52,7 +51,7 @@ body
                     height 3px
                     background #cccccc
                     .yellowFiller
-                        background #ff7300
+                        background rgba(15,70,0,0.6)
                         width 300px
                         height 3px
                         transform translateX(-300px)
@@ -64,9 +63,10 @@ body
         // to deleete 
         // 
         // 
-        display none
+        display flex
         width 100%
-
+        position relative
+        z-index: 500
         height 100%
         nav 
             display flex
@@ -79,7 +79,7 @@ body
             font-weight lighter
         .radialSun 
                 position absolute
-                z-index 1
+                z-index 501
                 border-radius 500px
                 top 130px
                 left 50%
@@ -87,7 +87,7 @@ body
                 width 600px
                 height 600px
                 opacity 0.9
-                background radial-gradient(circle, rgba(255,115,0,0.643207624846813) 0%, rgba(255,151,24,0) 56%, rgba(255,127,0,0) 100%)
+                background radial-gradient(circle, rgba(15,70,0,0.6) 0%, rgba(255,151,24,0) 56%, rgba(255,127,0,0) 100%)
         .beforeExperienceSas
             display flex
             width 100%
@@ -101,7 +101,8 @@ body
             align-items center
             .experienceStarter
                 border-radius 1000px
-                border  #ff7300 1px solid 
+                border  rgba(15,70,0,1) 2px solid 
+                transition: all 0.2s ease-out
                 background #000
                 display flex
                 justify-content center
@@ -114,6 +115,9 @@ body
                 right 60px
                 cursor pointer
                 bottom 60px
+            .experienceStarter:hover
+                                border  #65c94b 2px solid 
+
             h2
                 font-size 120px
                 z-index 5

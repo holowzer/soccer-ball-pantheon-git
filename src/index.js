@@ -270,7 +270,7 @@ window.addEventListener('wheel', (_event) => {
     
                 setTimeout(() => {
                     textFrameTab[sphereIncrementation].classList.toggle('revealInfo')  
-                }, 400)
+                }, 1000)
         
                 sphereFocus = sphereTab[sphereIncrementation]
                 TweenMax.to(
@@ -288,7 +288,7 @@ window.addEventListener('wheel', (_event) => {
                 setTimeout(function() {
                     canScroll = true
                     console.log(canScroll)
-                }, 2000)
+                }, 1000)
                 sceneSwitcher()
 
             }
@@ -309,7 +309,7 @@ window.addEventListener('wheel', (_event) => {
                 sphereIncrementation --
                 setTimeout(() => {
                     textFrameTab[sphereIncrementation].classList.toggle('revealInfo')  
-                }, 400)
+                }, 800)
         
                 sphereFocus= sphereTab[sphereIncrementation]
                 TweenMax.to(
@@ -331,7 +331,7 @@ window.addEventListener('wheel', (_event) => {
                 setTimeout(function() {
                     canScroll = true
                     console.log(canScroll)
-                }, 2000)
+                }, 1000)
             }
         }
     }
@@ -345,9 +345,7 @@ textFrameTab.forEach(Element=> {
 })
 
 camera.position.set(sphereFocus.position.x,-1,sphereFocus.position.z+10)
-setTimeout(() => {
-    textFrameTab[0].classList.toggle('revealInfo')  
-}, 600);
+
 
 camera.lookAt(sphereFocus.position)
 camera.position.x+=2
@@ -372,3 +370,5 @@ const loop = () =>
 }
 
 loop()
+
+
