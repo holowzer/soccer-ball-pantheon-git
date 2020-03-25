@@ -155,6 +155,7 @@ renderer.domElement.classList.add('ballCanvas')
 const textFrameTab= document.querySelectorAll('.textPlaceHolder')
 // to change the camera focus
 const sphereTab=[sphere1,sphere2,sphere3,sphere4,sphere5] 
+const gradientLayer=document.querySelectorAll('.bgGradientLayer')
 let sphereIncrementation=0
 let sphereFocus= sphereTab[sphereIncrementation]
 
@@ -162,15 +163,21 @@ let sphereFocus= sphereTab[sphereIncrementation]
 const sceneSwitcher = ()=>{
     if(sphereIncrementation<sphereTab.length-1){
         sphereIncrementation++
+        sphereFocus= sphereTab[sphereIncrementation]
 
         textFrameTab.forEach(Element=> {
             Element.classList.remove('revealInfo')
         })
+
+        gradientLayer.forEach(Element=> {
+            Element.classList.add('bgHidden')
+        })
+        gradientLayer[sphereIncrementation].classList.remove('bgHidden')
+
         setTimeout(() => {
             textFrameTab[sphereIncrementation].classList.toggle('revealInfo')  
         }, 400);
 
-        sphereFocus= sphereTab[sphereIncrementation]
         TweenMax.to(camera.position,1.5,{x:sphereFocus.position.x+2,y:0,z:sphereFocus.position.z+10, ease: Elastic.easeOut.config(0.7, 0.4) })        
     } 
     else{
@@ -184,6 +191,11 @@ const sceneSwitcher = ()=>{
 
         sphereFocus= sphereTab[sphereIncrementation]
         TweenMax.to(camera.position,4,{x:sphereFocus.position.x+2,y:0,z:sphereFocus.position.z+10, ease: Elastic.easeOut.config(0.6, 0.3) })
+        gradientLayer.forEach(Element=> {
+            Element.classList.add('bgHidden')
+        })
+        gradientLayer[0].classList.remove('bgHidden')
+
     }
 }
 
@@ -192,11 +204,11 @@ const sceneSwitcher = ()=>{
 
 // scroll between balls with space bar 
 
-document.addEventListener('keyup', (e)=>{
- if(e.keyCode==32){
-     sceneSwitcher()
- }
-});
+// document.addEventListener('keyup', (e)=>{
+//  if(e.keyCode==32){
+//      sceneSwitcher()
+//  }
+// });
 
 
 
@@ -211,4 +223,4 @@ setTimeout(() => {
 
 camera.lookAt(sphereFocus.position)
 camera.position.x+=2
-// controls = new OrbitControls(camera)
+controls = new OrbitControls(camera)

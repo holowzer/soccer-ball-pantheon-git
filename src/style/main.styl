@@ -135,10 +135,48 @@
         width 100%
         height 100%
         opacity: 1
-        background radial-gradient(circle, rgba(87,97,145,1) 0%, rgba(81,31,97,1) 69%);
+        .bgGradientLayer
+            transition: all 0.5s ease;
+        .bgGradientChange1
+            position absolute
+            width 100%
+            height 100%
+            background radial-gradient(circle, rgba(200,96,106,1) 0%, rgba(51,17,149,1) 63%);
+            z-index: 1
+        .bgGradientChange2
+            position absolute
+            width 100%
+            height 100%
+            background radial-gradient(circle, rgba(100,6,16,1) 0%, rgba(51,17,9,1) 63%);
+            z-index: 1
+        .bgGradientChange3
+            position absolute
+            width 100%
+            height 100%
+            background radial-gradient(circle, rgba(20,96,106,1) 0%, rgba(51,17,149,1) 63%);
+            z-index: 1
+        .bgGradientChange4
+            position absolute
+            width 100%
+            height 100%
+            background radial-gradient(circle, rgba(200,96,106,1) 0%, rgba(211,157,249,1) 63%);
+            z-index: 1
+        .bgGradientChange5
+            position absolute
+            width 100%
+            height 100%
+            background radial-gradient(circle, rgba(0,9,6,1) 0%, rgba(51,17,149,1) 63%)
+            z-index: 1
+        .bgHidden   
+            opacity 0
+
+
+
 
         canvas 
             background transparent
+            position relative
+            z-index: 30
         
 
  .textPlaceHolder 
@@ -150,6 +188,7 @@
     transition: opacity 0.6s ease
     pointer-events none
     position: absolute;
+    z-index: 31
     top 0 
     left 0
     display flex
