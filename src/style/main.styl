@@ -9,6 +9,7 @@
         width 100vw
         height 100vh
         font-family "Voyage"
+        background-image: linear-gradient(red, yellow);
         padding 0
         margin 0
         .loadingScreen
@@ -21,7 +22,7 @@
             // todelete 
             // 
             // 
-            display flex
+            display none
             justify-content: center
             align-items center
             flex-direction column
@@ -54,7 +55,7 @@
         // to deleete 
         // 
         // 
-        display: flex
+        display: none
         width 100%
 
         height 100%
@@ -123,13 +124,23 @@
                 margin-top -30px
                 text-align center
 .worldContainerBg
-
     width 100%
     height 100%
     overflow hidden
+    background black
     position absolute
     top: 0
-    z-index: -1
+    z-index: 1
+    .balloonWorld
+        width 100%
+        height 100%
+        opacity: 1
+        background radial-gradient(circle, rgba(87,97,145,1) 0%, rgba(81,31,97,1) 69%);
+
+        canvas 
+            background transparent
+        
+
  .textPlaceHolder 
     color: #fff;
     width: 100%
@@ -158,19 +169,14 @@
     p
         text-transform: capitalize
         font-family "manrope"
-        letter-spacing 2px
+        letter-spacing 1px
     h2
         text-transform: uppercase
         letter-spacing: 10px
     
 
-    .balloonWorld
-        width 100%
-        height 100%
-        opacity: 1
 
-        canvas
-            opacity 1
+
 
 
 

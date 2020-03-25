@@ -6,7 +6,6 @@ import * as THREE from 'three'
 import Ball from './javascript/ball.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {TweenMax,Elastic,SteppedEase} from "gsap"
-
 var OrbitControls = require('three-orbit-controls')(THREE)
 
 
@@ -110,10 +109,10 @@ scene.add(camera)
 /**
  * Renderer
  */
-const renderer = new THREE.WebGLRenderer({antialias : true})  
+const renderer = new THREE.WebGLRenderer({antialias : true,alpha: true })  
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(window.devicePixelRatio)
-renderer.setClearColor('#000033',0)
+renderer.setClearColor('#111654',0)
 document.querySelector('.balloonWorld').appendChild(renderer.domElement)
 
 
@@ -161,7 +160,7 @@ let sphereFocus= sphereTab[sphereIncrementation]
 
 
 const sceneSwitcher = ()=>{
-    if(sphereIncrementation<4){
+    if(sphereIncrementation<sphereTab.length-1){
         sphereIncrementation++
 
         textFrameTab.forEach(Element=> {
@@ -172,8 +171,7 @@ const sceneSwitcher = ()=>{
         }, 400);
 
         sphereFocus= sphereTab[sphereIncrementation]
-        TweenMax.to(camera.position,1.5,{x:sphereFocus.position.x+2,y:0,z:sphereFocus.position.z+10, ease: Elastic.easeOut.config(0.7, 0.4), })
-        
+        TweenMax.to(camera.position,1.5,{x:sphereFocus.position.x+2,y:0,z:sphereFocus.position.z+10, ease: Elastic.easeOut.config(0.7, 0.4) })        
     } 
     else{
         textFrameTab.forEach(Element=> {
@@ -185,10 +183,12 @@ const sceneSwitcher = ()=>{
         }, 400);
 
         sphereFocus= sphereTab[sphereIncrementation]
-        TweenMax.to(camera.position,4,{x:sphereFocus.position.x+2,y:0,z:sphereFocus.position.z+10, ease: Elastic.easeOut.config(0.6, 0.3), })
+        TweenMax.to(camera.position,4,{x:sphereFocus.position.x+2,y:0,z:sphereFocus.position.z+10, ease: Elastic.easeOut.config(0.6, 0.3) })
     }
 }
-window.addEventListener('click',sceneSwitcher)
+
+
+// window.addEventListener('click',sceneSwitcher)
 
 // scroll between balls with space bar 
 
@@ -205,6 +205,10 @@ textFrameTab.forEach(Element=> {
 })
 
 camera.position.set(sphereFocus.position.x,-1,sphereFocus.position.z+10)
-textFrameTab[0].classList.add('revealInfo')
+setTimeout(() => {
+    textFrameTab[0].classList.toggle('revealInfo')  
+}, 600);
+
 camera.lookAt(sphereFocus.position)
 camera.position.x+=2
+// controls = new OrbitControls(camera)
