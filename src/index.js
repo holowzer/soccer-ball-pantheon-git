@@ -66,6 +66,8 @@ const sphere2 =  new THREE.Mesh(sphereGeo,red)
 const sphere3 =  new THREE.Mesh(sphereGeo,blue)
 const sphere4 =  new THREE.Mesh(sphereGeo,red)
 const sphere5 =  new THREE.Mesh(sphereGeo,blue)
+const sphere6 =  new THREE.Mesh(sphereGeo,red)
+const sphere7 =  new THREE.Mesh(sphereGeo,blue)
 
 
 sphere1.position.x=-16*spaceRatio
@@ -92,6 +94,18 @@ sphere5.position.x=16*spaceRatio
 sphere5.position.z=10
 sphere5.scale.set(0.6,0.6,0.6)
 scene.add(sphere5)
+
+sphere6.position.x=24*spaceRatio
+sphere6.position.z=10
+sphere6.scale.set(0.6,0.6,0.6)
+scene.add(sphere6)
+
+sphere7.position.x=32*spaceRatio
+sphere7.position.z=10
+sphere7.scale.set(0.6,0.6,0.6)
+scene.add(sphere7)
+
+
 
 
 
@@ -154,7 +168,7 @@ renderer.domElement.classList.add('ballCanvas')
 // the textframe changer part
 const textFrameTab= document.querySelectorAll('.textPlaceHolder')
 // to change the camera focus
-const sphereTab=[sphere1,sphere2,sphere3,sphere4,sphere5] 
+const sphereTab=[sphere1,sphere2,sphere3,sphere4,sphere5,sphere6,sphere7] 
 const gradientLayer=document.querySelectorAll('.bgGradientLayer')
 let sphereIncrementation=0
 let sphereFocus= sphereTab[sphereIncrementation]
@@ -206,7 +220,7 @@ window.addEventListener('wheel', (_event) => {
         if(_event.deltaY > 0)
         {
             // And if our position is under the length array
-            if(sphereIncrementation < 4)
+            if(sphereIncrementation < sphereTab.length-1)
             {
                 //Then we go on the next scene by changing camera position
                 sphereIncrementation++
@@ -222,7 +236,7 @@ window.addEventListener('wheel', (_event) => {
                 sphereFocus = sphereTab[sphereIncrementation]
                 TweenMax.to(
                     camera.position,
-                    1.5,
+                    1,
                     {
                         x:sphereFocus.position.x+2,
                         y:0,z:sphereFocus.position.z+10, 
@@ -261,7 +275,7 @@ window.addEventListener('wheel', (_event) => {
                 sphereFocus= sphereTab[sphereIncrementation]
                 TweenMax.to(
                     camera.position,
-                    4,
+                    1,
                     {
                         x:sphereFocus.position.x+2,
                         y:0,
@@ -284,7 +298,7 @@ window.addEventListener('wheel', (_event) => {
     }
 })
 
-console.log(canScroll)
+console.log(sphereTab)
 
 
 textFrameTab.forEach(Element=> {
