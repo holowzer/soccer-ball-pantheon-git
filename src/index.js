@@ -74,37 +74,56 @@ const sphere7 =  new THREE.Mesh(sphereGeo,blue)
 sphere1.position.x=-16*spaceRatio
 sphere1.position.z=10
 sphere1.scale.set(0.6,0.6,0.6)
-scene.add(sphere4)
+scene.add(sphere1)
+
+
+
 
 sphere2.position.x=-8*spaceRatio
 sphere2.position.z=10
 sphere2.scale.set(0.6,0.6,0.6)
-scene.add(sphere3)
+scene.add(sphere2)
+
+
+
 
 sphere3.position.x=0*spaceRatio
 sphere3.position.z=10
 sphere3.scale.set(0.6,0.6,0.6)
-scene.add(sphere2)
+scene.add(sphere3)
 
-scene.add(sphere1)
+
+
 sphere4.position.x=8*spaceRatio
 sphere4.position.z=10
 sphere4.scale.set(0.6,0.6,0.6)
+scene.add(sphere4)
+
+
 
 sphere5.position.x=16*spaceRatio
 sphere5.position.z=10
 sphere5.scale.set(0.6,0.6,0.6)
 scene.add(sphere5)
 
+
+
+
 sphere6.position.x=24*spaceRatio
 sphere6.position.z=10
 sphere6.scale.set(0.6,0.6,0.6)
 scene.add(sphere6)
 
+
+
+
 sphere7.position.x=32*spaceRatio
 sphere7.position.z=10
 sphere7.scale.set(0.6,0.6,0.6)
 scene.add(sphere7)
+
+
+
 
 /**
  * Camera
@@ -296,7 +315,8 @@ camera.position.x+=2
 
 
 
-// const stone1= new StoneBuild(scene,20,0,20,3,"#22ee66")
+
+
 console.log(stone1)
 stone1.createSphere()
 
