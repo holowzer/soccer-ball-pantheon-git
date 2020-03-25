@@ -2,15 +2,17 @@ import * as THREE from 'three'
 
 
 class StoneBuild{
-    constructor(scene,xpos,ypos,zpos,stoneSize){
+    constructor(scene,xpos,ypos,zpos,stoneSize,color){
        
-        const floatingSphere= new THREE.DodecahedronGeometry(4,1)
+        const floatingSphere= new THREE.DodecahedronGeometry(4,2)
         const floatingStone= new THREE.DodecahedronGeometry(4,0)
-        const stoneMaterial = new THREE.MeshLambertMaterial({color : 0x421407})
+        this.color=color
+        const customMaterial = new THREE.MeshLambertMaterial({color : color})
         this.scene=scene
-        this.stone=new THREE.Mesh(floatingStone,stoneMaterial)
-        this.sphere=new THREE.Mesh(floatingStone,stoneMaterial)
+        this.stone=new THREE.Mesh(floatingStone,customMaterial)
+        this.sphere=new THREE.Mesh(floatingSphere,customMaterial)
         this.xpos=xpos
+        
         this.ypos=ypos
         this.zpos=zpos
         this.stoneSize=stoneSize
@@ -25,12 +27,12 @@ class StoneBuild{
     
             }
             this.createSphere=()=>{
-                this.stone.position.x=xpos
-                this.stone.position.y=ypos
-                this.stone.position.z=zpos
-                this.stone.scale.set(stoneSize,stoneSize,stoneSize)
-                this.scene.add(this.stone)
-                console.log("stone created")
+                this.sphere.position.x=xpos
+                this.sphere.position.y=ypos
+                this.sphere.position.z=zpos
+                this.sphere.scale.set(stoneSize,stoneSize,stoneSize)
+                this.scene.add(this.sphere)
+                console.log("sphere created")
     
             }
     }

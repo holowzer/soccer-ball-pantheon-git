@@ -296,12 +296,18 @@ camera.position.x+=2
 
 
 
-const stone1= new StoneBuild(scene,20,0,2,0.2)
+// const stone1= new StoneBuild(scene,20,0,20,3,"#22ee66")
 console.log(stone1)
 stone1.createSphere()
 
 
-// controls = new OrbitControls(camera)
+
+
+
+
+
+
+
 
 
 /**
@@ -323,3 +329,4 @@ const loop = () =>
 }
 
 loop()
+controls = new OrbitControls(camera)
