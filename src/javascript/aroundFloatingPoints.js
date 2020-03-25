@@ -15,13 +15,13 @@ class StoneBuild{
         
         this.ypos=ypos
         this.zpos=zpos
-        this.stoneSize=stoneSize
+        this.stoneSize=stoneSize/2
     
             this.createStone=()=>{
                 this.stone.position.x=xpos
                 this.stone.position.y=ypos
                 this.stone.position.z=zpos
-                this.stone.scale.set(stoneSize,stoneSize,stoneSize)
+                this.stone.scale.set(stoneSize/2,stoneSize/2,stoneSize/2)
                 this.scene.add(this.stone)
                 console.log("stone created")
     
@@ -30,7 +30,7 @@ class StoneBuild{
                 this.sphere.position.x=xpos
                 this.sphere.position.y=ypos
                 this.sphere.position.z=zpos
-                this.sphere.scale.set(stoneSize,stoneSize,stoneSize)
+                this.sphere.scale.set(stoneSize/2,stoneSize/2,stoneSize/2)
                 this.scene.add(this.sphere)
                 console.log("sphere created")
     

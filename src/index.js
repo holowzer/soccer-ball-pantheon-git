@@ -6,7 +6,7 @@ import * as THREE from 'three'
 import Ball from './javascript/ball.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {TweenMax,Elastic,SteppedEase} from "gsap"
-import StoneBuild from '../static/decorationNative/aroundFloatingPoints'
+import StoneBuild from './javascript/aroundFloatingPoints.js'
 var OrbitControls = require('three-orbit-controls')(THREE)
 
 
@@ -38,11 +38,11 @@ const scene = new THREE.Scene()
 /**
  * Lights
  */
-const preciseLight = new THREE.SpotLight ( 0xb80086,4);
+const preciseLight = new THREE.SpotLight ( 0xffffff,2);
 preciseLight.position.set( -300, 210, 150 );
 scene.add( preciseLight );
 
-const globalLight = new THREE.AmbientLight( 0x7bc7ee, 0.5);
+const globalLight = new THREE.AmbientLight( 0xffffff, 0.5);
 globalLight.position.set( -8, -8, 10 );
 scene.add( globalLight );
 
@@ -77,14 +77,24 @@ sphere1.scale.set(0.6,0.6,0.6)
 scene.add(sphere1)
 
 
-
+const ball1Deco1=new StoneBuild(scene,-16*spaceRatio+6,1,2,0.3,"#0061ad")
+const ball1Deco2=new StoneBuild(scene,-16*spaceRatio-8,-2,5,0.11,"#0061ad")
+const ball1Deco3=new StoneBuild(scene,-16*spaceRatio,0,17,0.09,"#0061ad")
+const ball1Deco4=new StoneBuild(scene,-16*spaceRatio+5,5,5,0.31,"#023761")
+ball1Deco1.createStone()
+ball1Deco2.createStone()
+ball1Deco3.createSphere()
+ball1Deco4.createSphere()
 
 sphere2.position.x=-8*spaceRatio
 sphere2.position.z=10
 sphere2.scale.set(0.6,0.6,0.6)
 scene.add(sphere2)
 
-
+const ball2Deco2=new StoneBuild(scene,-8*spaceRatio-8,-2,5,0.11,"#f48e00")
+const ball2Deco3=new StoneBuild(scene,-6*spaceRatio-7,5,13,0.11,"#cfa911")
+ball2Deco2.createStone()
+ball2Deco3.createSphere()
 
 
 sphere3.position.x=0*spaceRatio
@@ -92,6 +102,12 @@ sphere3.position.z=10
 sphere3.scale.set(0.6,0.6,0.6)
 scene.add(sphere3)
 
+const ball3Deco1=new StoneBuild(scene,0*spaceRatio-2,1,14,0.3,"#003003")
+const ball3Deco2=new StoneBuild(scene,0*spaceRatio-2,-2,5,0.11,"#003003")
+const ball3Deco4=new StoneBuild(scene,0*spaceRatio+5,3,15,0.31,"#003003")
+ball3Deco1.createStone()
+ball3Deco2.createStone()
+ball3Deco4.createSphere()
 
 
 sphere4.position.x=8*spaceRatio
@@ -99,14 +115,28 @@ sphere4.position.z=10
 sphere4.scale.set(0.6,0.6,0.6)
 scene.add(sphere4)
 
-
+const ball4Deco1=new StoneBuild(scene,8*spaceRatio+6,1,2,0.3,"#530000")
+const ball4Deco2=new StoneBuild(scene,8*spaceRatio-8,-2,5,0.11,"#6b201a")
+const ball4Deco3=new StoneBuild(scene,8*spaceRatio+7,2,13,0.11,"#530000")
+const ball4Deco4=new StoneBuild(scene,8*spaceRatio+3,5,12,0.31,"#530000")
+ball4Deco1.createStone()
+ball4Deco2.createStone()
+ball4Deco3.createSphere()
+ball4Deco4.createSphere()
 
 sphere5.position.x=16*spaceRatio
 sphere5.position.z=10
 sphere5.scale.set(0.6,0.6,0.6)
 scene.add(sphere5)
 
-
+const ball5Deco1=new StoneBuild(scene,16*spaceRatio+6,1,12,0.3,"#0061ad")
+const ball5Deco2=new StoneBuild(scene,16*spaceRatio-8,-2,5,0.11,"#0061ad")
+const ball5Deco3=new StoneBuild(scene,16*spaceRatio-7,5,5,0.11,"#0061ad")
+const ball5Deco4=new StoneBuild(scene,16*spaceRatio+5,5,13,0.31,"#023761")
+ball5Deco1.createStone()
+ball5Deco2.createStone()
+ball5Deco3.createSphere()
+ball5Deco4.createSphere()
 
 
 sphere6.position.x=24*spaceRatio
@@ -115,14 +145,28 @@ sphere6.scale.set(0.6,0.6,0.6)
 scene.add(sphere6)
 
 
-
+const ball6Deco1=new StoneBuild(scene,24*spaceRatio+6,1,14,0.3,"#0061ad")
+const ball6Deco2=new StoneBuild(scene,24*spaceRatio-8,-2,5,0.11,"#0061ad")
+const ball6Deco3=new StoneBuild(scene,24*spaceRatio-7,5,5,0.11,"#0061ad")
+const ball6Deco4=new StoneBuild(scene,24*spaceRatio+5,5,5,0.31,"#023761")
+ball6Deco1.createStone()
+ball6Deco2.createStone()
+ball6Deco3.createSphere()
+ball6Deco4.createSphere()
 
 sphere7.position.x=32*spaceRatio
 sphere7.position.z=10
 sphere7.scale.set(0.6,0.6,0.6)
 scene.add(sphere7)
 
-
+const ball7Deco1=new StoneBuild(scene,32*spaceRatio+6,1,2,0.3,"#0061ad")
+const ball7Deco2=new StoneBuild(scene,32*spaceRatio-8,-2,5,0.11,"#0061ad")
+const ball7Deco3=new StoneBuild(scene,32*spaceRatio-7,5,14,0.11,"#0061ad")
+const ball7Deco4=new StoneBuild(scene,32*spaceRatio+5,5,5,0.31,"#023761")
+ball7Deco1.createStone()
+ball7Deco2.createStone()
+ball7Deco3.createSphere()
+ball7Deco4.createSphere()
 
 
 /**
@@ -309,27 +353,6 @@ camera.lookAt(sphereFocus.position)
 camera.position.x+=2
 
 
-
-
-
-
-
-
-
-
-console.log(stone1)
-stone1.createSphere()
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Loop
  */
@@ -349,4 +372,3 @@ const loop = () =>
 }
 
 loop()
-controls = new OrbitControls(camera)
