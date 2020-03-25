@@ -160,7 +160,7 @@ let sphereIncrementation=0
 let sphereFocus= sphereTab[sphereIncrementation]
 
 
-const sceneSwitcher = ()=>{
+/*const sceneSwitcher = ()=>{
     if(sphereIncrementation<4){
         sphereIncrementation++
 
@@ -196,8 +196,98 @@ document.addEventListener('keyup', (e)=>{
  if(e.keyCode==32){
      sceneSwitcher()
  }
-});
+});*/
 
+/**
+* Animation ball on scroll
+* */
+
+// Set the scroll
+let canScroll = true
+
+window.addEventListener('wheel', (_event) => {
+    //_event.preventDefault()
+
+    // Accept the scroll
+    if(canScroll){
+
+        // If we scroll down
+        if(_event.deltaY > 0)
+        {
+            // And if our position is under the length array
+            if(sphereIncrementation < 4)
+            {
+                //Then we go on the next scene by changing camera position
+                sphereIncrementation++
+
+                textFrameTab.forEach(Element=> {
+                    Element.classList.remove('revealInfo')
+                })
+    
+                setTimeout(() => {
+                    textFrameTab[sphereIncrementation].classList.toggle('revealInfo')  
+                }, 400)
+        
+                sphereFocus = sphereTab[sphereIncrementation]
+                TweenMax.to(
+                    camera.position,
+                    1.5,
+                    {
+                        x:sphereFocus.position.x+2,
+                        y:0,z:sphereFocus.position.z+10, 
+                        ease: Elastic.easeOut.config(0.5, 0.3)
+                    }
+                )
+
+                // But we block the scroll to avoid jumping in other scenes
+                canScroll = false
+                setTimeout(function() {
+                    canScroll = true
+                    console.log(canScroll)
+                }, 2000)
+            }
+        }
+
+        // If we scroll up
+        if(_event.deltaY < 0)
+        {
+            // And if our position isn't negative
+            if(sphereIncrementation > 0)
+            {
+                // Then we go on the previous scene by changing camera position
+                textFrameTab.forEach(Element=> {
+                    Element.classList.remove('revealInfo')
+                })
+
+                sphereIncrementation --
+                setTimeout(() => {
+                    textFrameTab[sphereIncrementation].classList.toggle('revealInfo')  
+                }, 400)
+        
+                sphereFocus= sphereTab[sphereIncrementation]
+                TweenMax.to(
+                    camera.position,
+                    4,
+                    {
+                        x:sphereFocus.position.x+2,
+                        y:0,
+                        z:sphereFocus.position.z+10, 
+                        ease: Elastic.easeOut.config(0.5, 0.3) 
+                    }
+                )
+
+                // But we block the scroll to avoid jumping in other scenes
+                canScroll = false
+                setTimeout(function() {
+                    canScroll = true
+                    console.log(canScroll)
+                }, 2000)
+            }
+        }
+    }
+})
+
+console.log(canScroll)
 
 
 textFrameTab.forEach(Element=> {
