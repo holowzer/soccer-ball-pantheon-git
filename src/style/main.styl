@@ -1,6 +1,9 @@
 @font-face 
   font-family "Voyage"    
   src url("./fonts/Voyage Regular.otf")
+@font-face 
+  font-family "manrope"    
+  src url("./fonts/Manrope-Regular.ttf")
             
  body
         width 100vw
@@ -15,6 +18,9 @@
             transform: translateY(0)
             width 100%
             height 100%
+            // todelete 
+            // 
+            // 
             display flex
             justify-content: center
             align-items center
@@ -45,6 +51,10 @@
 
     .globalWindow
         background #000 
+        // to deleete 
+        // 
+        // 
+        display: flex
         width 100%
 
         height 100%
@@ -113,17 +123,41 @@
                 margin-top -30px
                 text-align center
 .worldContainerBg
-    background #000
+
     width 100%
     height 100%
+    overflow hidden
     position absolute
     top: 0
     z-index: -1
+ .textPlaceHolder 
+    color: #fff;
+    width: 350px
+    font-size: 1em;
+    opacity 0
+    transition: opacity 0.6s ease
+    pointer-events none
+    position: absolute;
+    top: 160px
+    right 90px
+    p
+        text-transform: capitalize
+        font-family "manrope"
+        letter-spacing 4px
+    h2
+        text-transform: uppercase
+        letter-spacing: 10px
+    
 
     .balloonWorld
         width 100%
         height 100%
-        opacity: 0
-        background #000
+        opacity: 1
+
         canvas
             opacity 1
+
+
+
+.revealInfo
+    opacity: 1

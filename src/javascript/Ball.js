@@ -14,8 +14,6 @@ export default class Ball
             (_gltf) =>
             {
                 this.ball = _gltf.scene.children[0]
-                console.log(_gltf.scene)
-
                 this.ball.scale.set(1, 1, 1)
                 this.group.add(this.ball)
             }
