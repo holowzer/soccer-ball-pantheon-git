@@ -4,30 +4,39 @@
 @font-face 
   font-family "manrope"    
   src url("./fonts/Manrope-Regular.ttf")
-            
+
+html
+body
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    overflow hidden
+
  body
         width 100vw
         height 100vh
         font-family "Voyage"
-        background-image: linear-gradient(red, yellow);
+        background-image linear-gradient(red, yellow)
         padding 0
         margin 0
         .loadingScreen
             background black
             z-index  2
             position absolute
-            transform: translateY(0)
+            transform translateY(0)
             width 100%
             height 100%
             // todelete 
             // 
             // 
             display none
-            justify-content: center
+            justify-content center
             align-items center
             flex-direction column
             h1
-                color: white
+                color white
                 letter-spacing 10px
                 margin 0
                 font-family "Voyage"
@@ -55,30 +64,30 @@
         // to deleete 
         // 
         // 
-        display: none
+        display none
         width 100%
 
         height 100%
         nav 
-            display: flex
-            justify-content: flex-start
-            align-items: center
-            color: white
-            position: fixed
-            padding-left: 30px
-            letter-spacing: 10px
-            font-weight: lighter
+            display flex
+            justify-content flex-start
+            align-items center
+            color white
+            position fixed
+            padding-left 30px
+            letter-spacing 10px
+            font-weight lighter
         .radialSun 
                 position absolute
-                z-index: 1
-                border-radius: 500px
-                top: 130px
+                z-index 1
+                border-radius 500px
+                top 130px
                 left 50%
-                margin-left: -300px
+                margin-left -300px
                 width 600px
                 height 600px
                 opacity 0.9
-                background: radial-gradient(circle, rgba(255,115,0,0.643207624846813) 0%, rgba(255,151,24,0) 56%, rgba(255,127,0,0) 100%);
+                background radial-gradient(circle, rgba(255,115,0,0.643207624846813) 0%, rgba(255,151,24,0) 56%, rgba(255,127,0,0) 100%)
         .beforeExperienceSas
             display flex
             width 100%
@@ -87,36 +96,36 @@
             overflow hidden
             justify-content center
             opacity 0
-            flex-direction: column
-            perspective: 600px
+            flex-direction column
+            perspective 600px
             align-items center
             .experienceStarter
-                border-radius: 1000px
-                border:  #ff7300 1px solid 
+                border-radius 1000px
+                border  #ff7300 1px solid 
                 background #000
                 display flex
-                justify-content: center
-                align-items: center
-                color: white
+                justify-content center
+                align-items center
+                color white
                 width 120px
                 height 120px
                 position absolute
-                font-size: 12px
+                font-size 12px
                 right 60px
-                cursor: pointer
-                bottom: 60px
+                cursor pointer
+                bottom 60px
             h2
-                font-size: 120px
+                font-size 120px
                 z-index 5
                 position relative
-                pointer-events: none
-                font-weight: lighter
-                color: white
-                line-height: 110px
+                pointer-events none
+                font-weight lighter
+                color white
+                line-height 110px
                 width 1100px
-                text-align: center
-                text-transform: uppercase
-                letter-spacing: 10px
+                text-align center
+                text-transform uppercase
+                letter-spacing 10px
             h4
                 color white
                 width 700px
@@ -129,14 +138,14 @@
     overflow hidden
     background black
     position absolute
-    top: 0
-    z-index: 1
+    top 0
+    z-index 1
     .balloonWorld
         width 100%
         height 100%
-        opacity: 1
+        opacity 1
         .bgGradientLayer
-            transition: all 0.5s ease;
+            transition all 0.5s ease
         .bgGradientChange1
             position absolute
             width 100%
@@ -188,42 +197,42 @@
         canvas 
             background transparent
             position relative
-            z-index: 30
+            z-index 30
         
 
  .textPlaceHolder 
-    color: #fff;
-    width: 100%
+    color #fff
+    width 100%
     height 100%
-    font-size: 1em;
+    font-size 1em
     opacity 0
-    transition: opacity 0.6s ease
+    transition opacity 0.6s ease
     pointer-events none
-    position: absolute;
-    z-index: 31
+    position absolute
+    z-index 31
     top 0 
     left 0
     display flex
     .leftInfo
         left 100px
-        top: 500px
+        top 500px
         position absolute
-        text-align: center
+        text-align center
         width 400px
         font-size 1.5em
     .rightInfo
         position absolute
         right 70px
-        top: 300px
+        top 300px
         width 400px
 
     p
-        text-transform: capitalize
+        text-transform capitalize
         font-family "manrope"
         letter-spacing 1px
     h2
-        text-transform: uppercase
-        letter-spacing: 10px
+        text-transform uppercase
+        letter-spacing 10px
     
 
 
@@ -232,4 +241,4 @@
 
 
 .revealInfo
-    opacity: 1
+    opacity 1
