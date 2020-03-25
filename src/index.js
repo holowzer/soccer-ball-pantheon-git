@@ -47,7 +47,7 @@ const preciseLight = new THREE.SpotLight ( 0xffffff,2);
 preciseLight.position.set( -300, 210, 150 );
 scene.add( preciseLight );
 
-const globalLight = new THREE.AmbientLight( 0xffffff, 0.5);
+const globalLight = new THREE.AmbientLight( 0xffffff, 0.6);
 globalLight.position.set( -8, -8, 10 );
 scene.add( globalLight );
 
@@ -128,7 +128,7 @@ ball3Deco1.createStone()
 ball3Deco2.createStone()
 ball3Deco4.createSphere()
 
-mikasa.group.position.x=0*spaceRatio
+mikasa.group.position.x=8*spaceRatio
 mikasa.group.position.z=10
 mikasa.group.scale.set(0.6,0.6,0.6)
 mikasa.group.rotation.y = 1
@@ -397,26 +397,37 @@ window.addEventListener('click',()=>{
 
 let cursorX 
 let cursorY
-let translationX
+let translationX=0
+let targetParticules
+let travel
 let originalPlaceX=[]
 allParticles.forEach(element => {
     originalPlaceX.push(element.position.x)
 });
-console.log(originalPlaceX)
 
 // get the curosor position 
 window.addEventListener('mousemove',(e)=>{
     // i had to calm down the cursor strength in term of number size
      cursorX = e.clientX - 750
      cursorY = e.clientY - 150
-     translationX=cursorX/2000
+     translationX=cursorX/800
     //  animating the 3d smooth ofthe text + the little move of the ball in the back
-    for(let i=0;i<originalPlaceX.length;i++){
-        allParticles[i].position.x=originalPlaceX[i]+translationX
-    }
+
 
 })
 
+const particleMove=()=>{
 
-// controls = new OrbitControls(camera)
+    for(let i=0;i<originalPlaceX.length;i++){
+        targetParticules=originalPlaceX[i]+translationX
+        travel=targetParticules-allParticles[i].position.x
+        allParticles[i].position.x+=travel/30
+        console.log(allParticles[i].position.x,travel,targetParticules)
+        }
+    requestAnimationFrame(particleMove)
+}
+requestAnimationFrame(particleMove)
 
+
+
+// dx =originalPlaceX[i]+translationX
