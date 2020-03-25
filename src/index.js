@@ -410,7 +410,7 @@ window.addEventListener('mousemove',(e)=>{
     // i had to calm down the cursor strength in term of number size
      cursorX = e.clientX - 750
      cursorY = e.clientY - 150
-     translationX=cursorX/800
+     translationX=cursorX/500
     //  animating the 3d smooth ofthe text + the little move of the ball in the back
 
 
@@ -421,7 +421,7 @@ const particleMove=()=>{
     for(let i=0;i<originalPlaceX.length;i++){
         targetParticules=originalPlaceX[i]+translationX
         travel=targetParticules-allParticles[i].position.x
-        allParticles[i].position.x+=travel/30
+        allParticles[i].position.x+=travel/20
         console.log(allParticles[i].position.x,travel,targetParticules)
         }
     requestAnimationFrame(particleMove)
