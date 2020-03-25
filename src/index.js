@@ -6,6 +6,7 @@ import * as THREE from 'three'
 import Ball from './javascript/ball.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {TweenMax,Elastic,SteppedEase} from "gsap"
+import StoneBuild from '../static/decorationNative/aroundFloatingPoints'
 var OrbitControls = require('three-orbit-controls')(THREE)
 
 
@@ -37,11 +38,11 @@ const scene = new THREE.Scene()
 /**
  * Lights
  */
-const preciseLight = new THREE.SpotLight    ( 0xff7777);
-preciseLight.position.set( 0, 0, 220 );
+const preciseLight = new THREE.SpotLight ( 0xb80086,4);
+preciseLight.position.set( -300, 210, 150 );
 scene.add( preciseLight );
 
-const globalLight = new THREE.AmbientLight( 0xffffff, 0.3);
+const globalLight = new THREE.AmbientLight( 0x7bc7ee, 0.5);
 globalLight.position.set( -8, -8, 10 );
 scene.add( globalLight );
 
@@ -312,4 +313,16 @@ setTimeout(() => {
 
 camera.lookAt(sphereFocus.position)
 camera.position.x+=2
-// controls = new OrbitControls(camera)
+
+
+
+
+
+
+
+
+const stone1= new StoneBuild(scene,20,0,2,0.2)
+console.log(stone1)
+stone1.createSphere()
+
+

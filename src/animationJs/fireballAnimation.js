@@ -14,4 +14,3 @@ window.addEventListener('mousemove',(e)=>{
      textMove.style.transform = "rotateY("+  cursorX/185 +"deg) translateY("+  cursorY/60  +"px)"
 })
 
- 
