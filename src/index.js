@@ -105,10 +105,6 @@ sphere7.position.z=10
 sphere7.scale.set(0.6,0.6,0.6)
 scene.add(sphere7)
 
-
-
-
-
 /**
  * Camera
  */
@@ -118,8 +114,6 @@ camera.position.x=-20
 camera.position.y=-1
 scene.add(camera)
 
-
-
 /**
  * Renderer
  */
@@ -128,9 +122,6 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setClearColor('#111654',0)
 document.querySelector('.balloonWorld').appendChild(renderer.domElement)
-
-
-
 
 /**
  * Resize
@@ -145,22 +136,6 @@ window.addEventListener('resize', () =>
 
     renderer.setSize(sizes.width, sizes.height)
 })
-
-
-/**
- * Loop
- */
-
-const loop = () =>
-{
-    window.requestAnimationFrame(loop)
-
-    // Render
-    renderer.render(scene, camera)
-
-}
-
-loop()
 
 
 
@@ -191,11 +166,11 @@ const sceneSwitcher = ()=>{
 
     }
 }
-
-
 window.addEventListener('click',sceneSwitcher)
 
-// scroll between balls with space bar 
+/**
+ * Scroll between balls with space bar 
+ */
 
 document.addEventListener('keyup', (e)=>{
  if(e.keyCode==32){
@@ -205,7 +180,7 @@ document.addEventListener('keyup', (e)=>{
 
 /**
 * Animation ball on scroll
-* */
+*/
 
 // Set the scroll
 let canScroll = true
@@ -313,3 +288,24 @@ setTimeout(() => {
 camera.lookAt(sphereFocus.position)
 camera.position.x+=2
 // controls = new OrbitControls(camera)
+
+
+/**
+ * Loop
+ */
+
+const loop = () =>
+{
+    window.requestAnimationFrame(loop)
+
+    // Change camera position with cursor 
+    /*camera.position.x = cursor.x * 40
+    camera.position.y = - cursor.y * 40
+    camera.lookAt(scene.position)*/
+
+    // Render
+    renderer.render(scene, camera)
+
+}
+
+loop()
