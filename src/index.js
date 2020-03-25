@@ -173,7 +173,7 @@ const sceneSwitcher = ()=>{
             Element.classList.add('bgHidden')
         })
         gradientLayer[sphereIncrementation].classList.remove('bgHidden')
-
+     
         setTimeout(() => {
             textFrameTab[sphereIncrementation].classList.toggle('revealInfo')  
         }, 400);
