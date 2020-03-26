@@ -15,7 +15,7 @@ export default class Classic
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/classic-ball/scene.gltf',
+            '/models/classic-ball/scene.glb',
             (_gltf) =>
             {
                 this.classic = _gltf.scene.children[0]

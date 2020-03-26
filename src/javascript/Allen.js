@@ -15,7 +15,7 @@ export default class Allen
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/vintage-ball/scene.gltf',
+            '/models/vintage-ball/scene.glb',
             (_gltf) =>
             {
                 this.allen = _gltf.scene.children[0]

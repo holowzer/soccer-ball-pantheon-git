@@ -15,7 +15,7 @@ export default class Mikasa
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/mikasa-ball/scene.gltf',
+            '/models/mikasa-ball/scene.glb',
             (_gltf) =>
             {
                 this.mikasa = _gltf.scene.children[0]

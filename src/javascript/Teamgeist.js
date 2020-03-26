@@ -15,7 +15,7 @@ export default class Teamgeist
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/teamgeist-ball/scene.gltf',
+            '/models/teamgeist-ball/scene.glb',
             (_gltf) =>
             {
                 this.teamgeist = _gltf.scene.children[0]
