@@ -87,7 +87,7 @@ scene.add(cafusa.group)
 
 
 
-const spaceRatio= 5
+const spaceRatio= 6
 const sphereGeo = new THREE.SphereGeometry(5,32,32)
 const blue = new THREE.MeshLambertMaterial({color : 0x552227})
 const red = new THREE.MeshLambertMaterial({color : 0x12312a})
@@ -102,34 +102,53 @@ scene.add(allen.group)
 
 const ball1Deco1=new StoneBuild(scene,-16*spaceRatio+6,1,2,0.3,"#0061ad")
 const ball1Deco2=new StoneBuild(scene,-16*spaceRatio-8,-2,5,0.11,"#0061ad")
-const ball1Deco3=new StoneBuild(scene,-16*spaceRatio,0,17,0.09,"#0061ad")
-const ball1Deco4=new StoneBuild(scene,-16*spaceRatio+5,5,5,0.31,"#023761")
+const ball1Deco3=new StoneBuild(scene,-16*spaceRatio+3,2,16,0.09,"#0061ad")
+const ball1Deco4=new StoneBuild(scene,-16*spaceRatio+5,5,-5,0.31,"#1f31a1")
+const ball1Deco5=new StoneBuild(scene,-16*spaceRatio-8,2,8,0.6,"#0061ad")
+const ball1Deco6=new StoneBuild(scene,-16*spaceRatio-11,5,1,0.5,"#0061ad")
+const ball1Deco7=new StoneBuild(scene,-16*spaceRatio-14,5,6,0.2,"#0061ad")
+
 ball1Deco1.createStone()
 ball1Deco2.createStone()
 ball1Deco3.createSphere()
 ball1Deco4.createSphere()
+ball1Deco5.createStone()
+ball1Deco6.createStone()
+ball1Deco7.createStone()
 
 dog.group.position.x=-8*spaceRatio
 dog.group.position.z=10
 dog.group.scale.set(0.6,0.6,0.6)
 scene.add(dog.group)
 
-const ball2Deco2=new StoneBuild(scene,-8*spaceRatio-8,-2,5,0.11,"#f48e00")
-const ball2Deco3=new StoneBuild(scene,-6*spaceRatio-7,5,13,0.11,"#cfa911")
+const ball2Deco1=new StoneBuild(scene,-8*spaceRatio-8,-4,5,0.11,"#f48e00")
+const ball2Deco2=new StoneBuild(scene,-6*spaceRatio-7,0,10,0.21,"#5b2b04")
+const ball2Deco3=new StoneBuild(scene,-8*spaceRatio+2,-2,5,0.11,"#f48e00")
+const ball2Deco4=new StoneBuild(scene,-6*spaceRatio+4,5,6,0.31,"#5b2b04")
+const ball2Deco5=new StoneBuild(scene,-8*spaceRatio-8,-2,5,0.18,"#5b2b04")
+const ball2Deco6=new StoneBuild(scene,-6*spaceRatio-7,8,8,0.4,"#5b2b04")
+ball2Deco1.createStone()
 ball2Deco2.createStone()
-ball2Deco3.createSphere()
+ball2Deco3.createStone()
+ball2Deco4.createStone()
+ball2Deco5.createStone()
+ball2Deco6.createSphere()
 
 classic.group.position.x=0*spaceRatio
 classic.group.position.z=10
 classic.group.scale.set(0.6,0.6,0.6)
 scene.add(classic.group)
 
-const ball3Deco1=new StoneBuild(scene,0*spaceRatio-2,1,14,0.3,"#003003")
-const ball3Deco2=new StoneBuild(scene,0*spaceRatio-2,-2,5,0.11,"#003003")
-const ball3Deco4=new StoneBuild(scene,0*spaceRatio+5,3,15,0.31,"#003003")
+const ball3Deco1=new StoneBuild(scene,0*spaceRatio-4,5,10,0.3,"#003003")
+const ball3Deco2=new StoneBuild(scene,0*spaceRatio-5,-4,5,0.11,"#003003")
+const ball3Deco3=new StoneBuild(scene,0*spaceRatio+6,3,-2,0.31,"#003003")
+const ball3Deco4=new StoneBuild(scene,0*spaceRatio+8,6,-8,0.21,"#003003")
+const ball3Deco5=new StoneBuild(scene,0*spaceRatio+10,3,5,0.81,"#003003")
 ball3Deco1.createStone()
 ball3Deco2.createStone()
+ball3Deco3.createSphere()
 ball3Deco4.createSphere()
+ball3Deco5.createSphere()
 
 mikasa.group.position.x=8*spaceRatio
 mikasa.group.position.z=10
@@ -185,10 +204,10 @@ cafusa.group.position.z=10
 cafusa.group.scale.set(0.6,0.6,0.6)
 scene.add(cafusa.group)
 
-const ball7Deco1=new StoneBuild(scene,32*spaceRatio+6,1,2,0.3,"#0061ad")
-const ball7Deco2=new StoneBuild(scene,32*spaceRatio-8,-2,5,0.11,"#0061ad")
-const ball7Deco3=new StoneBuild(scene,32*spaceRatio-7,5,14,0.11,"#0061ad")
-const ball7Deco4=new StoneBuild(scene,32*spaceRatio+5,5,5,0.31,"#023761")
+const ball7Deco1=new StoneBuild(scene,32*spaceRatio+6,1,2,0.3,"#6800ad")
+const ball7Deco2=new StoneBuild(scene,32*spaceRatio-8,-2,5,0.11,"#6800ad")
+const ball7Deco3=new StoneBuild(scene,32*spaceRatio-6,5,12,0.11,"#6800ad")
+const ball7Deco4=new StoneBuild(scene,32*spaceRatio+5,5,5,0.31,"#6800ad")
 ball7Deco1.createStone()
 ball7Deco2.createStone()
 ball7Deco3.createSphere()
@@ -198,10 +217,10 @@ ball7Deco4.createSphere()
 *Date typo
 **/
 
+// text material 
+const materialText= new THREE.MeshLambertMaterial({color : 0xffffff})
+
 //Allen's Text
-const material = new THREE.MeshBasicMaterial({
-  color: 0xffffff,
-})
 
 const textGeometry = new THREE.TextGeometry(
     '1930',
@@ -217,19 +236,17 @@ const textGeometry = new THREE.TextGeometry(
         bevelSegments: 10
     }
 )
-const text = new THREE.Mesh(textGeometry, material)
+const text = new THREE.Mesh(textGeometry, materialText)
 text.position.x = -16*spaceRatio
-text.position.y = 4
-text.position.z = 7
+text.position.y = 2
+text.position.z = 5
 text.rotation.x = 0.2
 text.rotation.y = 0.2
 
 scene.add(text)
 
-//Ballon d'or's Text
-const material2 = new THREE.MeshBasicMaterial({
-  color: 0xffffff,
-})
+//Ballon cassé Text
+
 
 const textGeometry2 = new THREE.TextGeometry(
     '1956',
@@ -245,19 +262,16 @@ const textGeometry2 = new THREE.TextGeometry(
         bevelSegments: 10
     }
 )
-const text2 = new THREE.Mesh(textGeometry2, material2)
+const text2 = new THREE.Mesh(textGeometry2, materialText)
 text2.position.x = -16*spaceRatio
-text2.position.y = 4
-text2.position.z = 7
+text2.position.y = 2
+text2.position.z = 5
 text2.rotation.x = 0.2
 text2.rotation.y = 0.2
 
 scene.add(text2)
 
 //Azteca's Text
-const material3 = new THREE.MeshBasicMaterial({
-  color: 0xffffff,
-})
 
 const textGeometry3 = new THREE.TextGeometry(
     '1986',
@@ -273,19 +287,17 @@ const textGeometry3 = new THREE.TextGeometry(
         bevelSegments: 10
     }
 )
-const text3 = new THREE.Mesh(textGeometry3, material3)
+const text3 = new THREE.Mesh(textGeometry3, materialText)
 text3.position.x = -16*spaceRatio
-text3.position.y = 4
-text3.position.z = 7
+text3.position.y = 2
+text3.position.z =5
 text3.rotation.x = 0.2
 text3.rotation.y = 0.2
 
 scene.add(text3)
 
 //FT-5's Text
-const material4 = new THREE.MeshBasicMaterial({
-  color: 0xffffff,
-})
+
 
 const textGeometry4 = new THREE.TextGeometry(
     '1994',
@@ -301,19 +313,16 @@ const textGeometry4 = new THREE.TextGeometry(
         bevelSegments: 10
     }
 )
-const text4 = new THREE.Mesh(textGeometry4, material4)
+const text4 = new THREE.Mesh(textGeometry4, materialText)
 text4.position.x = -16*spaceRatio
-text4.position.y = 4
-text4.position.z = 7
+text4.position.y = 2
+text4.position.z = 5
 text4.rotation.x = 0.2
 text4.rotation.y = 0.2
 
 scene.add(text4)
 
-//Teamgeist's Text
-const material5 = new THREE.MeshBasicMaterial({
-  color: 0xffffff,
-})
+
 
 const textGeometry5 = new THREE.TextGeometry(
     '2006',
@@ -329,19 +338,17 @@ const textGeometry5 = new THREE.TextGeometry(
         bevelSegments: 10
     }
 )
-const text5 = new THREE.Mesh(textGeometry5, material5)
+const text5 = new THREE.Mesh(textGeometry5, materialText)
 text5.position.x = -16*spaceRatio
-text5.position.y = 4
-text5.position.z = 7
+text5.position.y = 2
+text5.position.z = 5
 text5.rotation.x = 0.2
 text5.rotation.y = 0.2
 
 scene.add(text5)
 
 //Jabulani's Text
-const material6 = new THREE.MeshBasicMaterial({
-  color: 0xffffff,
-})
+
 
 const textGeometry6 = new THREE.TextGeometry(
     '2010',
@@ -357,19 +364,17 @@ const textGeometry6 = new THREE.TextGeometry(
         bevelSegments: 10
     }
 )
-const text6 = new THREE.Mesh(textGeometry6, material6)
+const text6 = new THREE.Mesh(textGeometry6, materialText)
 text6.position.x = -16*spaceRatio
-text6.position.y = 4
-text6.position.z = 7
+text6.position.y = 2
+text6.position.z = 5
 text6.rotation.x = 0.2
 text6.rotation.y = 0.2
 
 scene.add(text6)
 
 //Cafusa's Text
-const material7 = new THREE.MeshBasicMaterial({
-  color: 0xffffff,
-})
+
 
 const textGeometry7 = new THREE.TextGeometry(
     '2013',
@@ -385,10 +390,10 @@ const textGeometry7 = new THREE.TextGeometry(
         bevelSegments: 10
     }
 )
-const text7 = new THREE.Mesh(textGeometry7, material7)
+const text7 = new THREE.Mesh(textGeometry7, materialText)
 text7.position.x = -16*spaceRatio
-text7.position.y = 4
-text7.position.z = 7
+text7.position.y = 2
+text7.position.z = 5
 text7.rotation.x = 0.2
 text7.rotation.y = 0.2
 
@@ -512,7 +517,7 @@ window.addEventListener('wheel', (_event) => {
                 sphereFocus = sphereTab[sphereIncrementation]
                 TweenMax.to(
                     camera.position,
-                    1,
+                    2,
                     {
                         x:sphereFocus.position.x+2,
                         y:0,z:sphereFocus.position.z+10,
@@ -551,7 +556,7 @@ window.addEventListener('wheel', (_event) => {
                 sphereFocus= sphereTab[sphereIncrementation]
                 TweenMax.to(
                     camera.position,
-                    1,
+                    2,
                     {
                         x:sphereFocus.position.x+2,
                         y:0,
@@ -628,45 +633,38 @@ const loop = () =>
 
     //Update Allen's Text
 const TextAngle = Date.now() * 0.0000004
-text.position.z = Math.cos(TextAngle)
-text.position.x = Math.sin(TextAngle) - 55
-text.position.y = Math.sin(Date.now() * 0.001) + 8
+text.position.x = Math.sin(TextAngle) - 110
+text.position.y = Math.sin(Date.now() * 0.001) + 5
 
 //Update Ballon d'or's Text
 const TextAngle2 = Date.now() * 0.0000004
-text2.position.z = Math.cos(TextAngle2)
-text2.position.x = Math.sin(TextAngle2) - 30
-text2.position.y = Math.sin(Date.now() * 0.001) + 8
+text2.position.x = Math.sin(TextAngle2) - 60
+text2.position.y = Math.sin(Date.now() * 0.001) + 5
 
 //Update Azteca's Text
 const TextAngle3 = Date.now() * 0.0000004
-text3.position.z = Math.cos(TextAngle3)
-text3.position.x = Math.sin(TextAngle3) - 10
-text3.position.y = Math.sin(Date.now() * 0.001) + 8
+text3.position.x = Math.sin(TextAngle3) - 15
+text3.position.y = Math.sin(Date.now() * 0.001) + 5
 
 //Update FT-5's Text
 const TextAngle4 = Date.now() * 0.0000004
-text4.position.z = Math.cos(TextAngle4)
-text4.position.x = Math.sin(TextAngle4) + 10
-text4.position.y = Math.sin(Date.now() * 0.001) + 8
+text4.position.x = Math.sin(TextAngle4) + 33
+text4.position.y = Math.sin(Date.now() * 0.001) + 5
 
 //Update Teamgeist's Text
 const TextAngle5 = Date.now() * 0.0000004
-text5.position.z = Math.cos(TextAngle5)
-text5.position.x = Math.sin(TextAngle5) + 40
-text5.position.y = Math.sin(Date.now() * 0.001) + 8
+text5.position.x = Math.sin(TextAngle5) + 81
+text5.position.y = Math.sin(Date.now() * 0.001) + 5
 
 //Update Jabulani's Text
 const TextAngle6 = Date.now() * 0.0000004
-text6.position.z = Math.cos(TextAngle6)
-text6.position.x = Math.sin(TextAngle6) + 60
-text6.position.y = Math.sin(Date.now() * 0.001) + 8
+text6.position.x = Math.sin(TextAngle6) + 131
+text6.position.y = Math.sin(Date.now() * 0.001) + 5
 
 //Update Cafuna's Text
 const TextAngle7 = Date.now() * 0.0000004
-text7.position.z = Math.cos(TextAngle7)
-text7.position.x = Math.sin(TextAngle7) + 90
-text7.position.y = Math.sin(Date.now() * 0.001) + 8
+text7.position.x = Math.sin(TextAngle7) + 178
+text7.position.y = Math.sin(Date.now() * 0.001) + 5
 
     // Change camera position with cursor
     /*camera.position.x = cursor.x * 40

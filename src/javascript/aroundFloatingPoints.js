@@ -22,7 +22,7 @@ class StoneBuild{
                 this.stone.position.x=xpos
                 this.stone.position.y=ypos
                 this.stone.position.z=zpos
-                this.stone.scale.set(stoneSize/3,stoneSize/3,stoneSize/3)
+                this.stone.scale.set(stoneSize/4,stoneSize/4,stoneSize/4)
                 allParticles.push(this.stone)
                 this.scene.add(this.stone)
                 //console.log("stone created")
@@ -32,7 +32,7 @@ class StoneBuild{
                 this.sphere.position.x=xpos
                 this.sphere.position.y=ypos
                 this.sphere.position.z=zpos
-                this.sphere.scale.set(stoneSize/3,stoneSize/3,stoneSize/3)
+                this.sphere.scale.set(stoneSize/4,stoneSize/4,stoneSize/4)
                 allParticles.push(this.sphere)
                 this.scene.add(this.sphere)
                 //console.log("sphere created")
