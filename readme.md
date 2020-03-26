@@ -9,7 +9,7 @@ the most incredible matches, the most emotionnal stories brought thanks to a sim
 
 ## The website
 
-Just here ! https://liendusite.fr/
+Just here ! https://holowzer.github.io/PELOTA/index.html
 
 ## Team
 
