@@ -15,6 +15,7 @@ import {TweenMax,Elastic,SteppedEase} from "gsap"
 import  {allParticles,StoneBuild} from './javascript/aroundFloatingPoints.js'
 var OrbitControls = require('three-orbit-controls')(THREE)
 import font from 'three/examples/fonts/droid/droid_serif_regular.typeface.json'
+import footAudio from './audio/kick-ball.mp3'
 // import './animationJs/particlesCursor'
 
 /**
@@ -488,6 +489,10 @@ document.addEventListener('keyup', (e)=>{
 * Animation ball on scroll
 */
 
+// Audio of the audience
+const ballSound = new Audio (footAudio)
+ballSound.volume = 0.5
+
 // Set the scroll
 let canScroll = true
 
@@ -524,6 +529,9 @@ window.addEventListener('wheel', (_event) => {
                         ease: Elastic.easeOut.config(0.5, 0.3)
                     }
                 )
+
+                ballSound.play()
+                ballSound.currentTime = 0
 
                 // But we block the scroll to avoid jumping in other scenes
                 canScroll = false
@@ -564,9 +572,10 @@ window.addEventListener('wheel', (_event) => {
                         ease: Elastic.easeOut.config(0.5, 0.3)
                     },
                     sceneSwitcher()
-
-
                 )
+
+                ballSound.play()
+                ballSound.currentTime = 0
 
                 // But we block the scroll to avoid jumping in other scenes
                 canScroll = false
