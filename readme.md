@@ -36,9 +36,15 @@ Just here ! https://liendusite.fr/
 
 Take care of these :wink:
 
+## Inspirations
+
+* [Misato Town Shimane](https://www.town.shimane-misato.lg.jp/misatoto/)
+
+* [The Three Graces](http://mountainous-father.surge.sh/)
+
 ## Thanks to
 
-Thanks to Bruno Simon who gave us all the necessary elements to realize this project thanks by his expertise and experience. He contributed a lot thanks to his answers to our questions.
-A big thank you also to HETIC who allowed us to work in good conditions despite the COVID-19. 
-And finally, thanks to Maxime Sarri who will take his time to observe our project.
+Thanks to Bruno Simon who gave us all the necessary elements to realize this project with his expertise and experience. He contributed a lot thanks to his answers to our questions.
+Also thanks to HETIC who allowed us to work in good conditions despite the exceptional conditions we face. 
+And finally, thanks to Maxime Sarri who will take his time to observe our project and give us advice.
 
