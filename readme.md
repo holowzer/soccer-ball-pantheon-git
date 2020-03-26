@@ -35,3 +35,10 @@ Just here ! https://liendusite.fr/
 * [BON VOYAGE](https://www.dafont.com/made-bon-voyage.font)
 
 Take care of these :wink:
+
+## Thanks to
+
+Thanks to Bruno Simon who gave us all the necessary elements to realize this project thanks by his expertise and experience. He contributed a lot thanks to his answers to our questions.
+A big thank you also to HETIC who allowed us to work in good conditions despite the COVID-19. 
+And finally, thanks to Maxime Sarri who will take his time to observe our project.
+
