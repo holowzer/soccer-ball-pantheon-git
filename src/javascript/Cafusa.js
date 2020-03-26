@@ -15,11 +15,11 @@ export default class Cafusa
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/cafusa-ball/scene.gltf',
+            './models/cafusa-ball/scene.glb',
             (_gltf) =>
             {
                 this.cafusa = _gltf.scene.children[0]
-                this.cafusa.scale.set(0.5, 0.5, 0.5)
+                this.cafusa.scale.set(0.45, 0.45, 0.45)
                 this.group.add(this.cafusa)
             }
         )

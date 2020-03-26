@@ -15,11 +15,11 @@ export default class Allen
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/vintage-ball/scene.gltf',
+            './models/vintage-ball/scene.glb',
             (_gltf) =>
             {
                 this.allen = _gltf.scene.children[0]
-                this.allen.scale.set(0.03, 0.03, 0.03)
+                this.allen.scale.set(0.036, 0.036, 0.036)
                 this.group.add(this.allen)
             }
         )

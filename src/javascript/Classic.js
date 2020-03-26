@@ -15,11 +15,11 @@ export default class Classic
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/classic-ball/scene.gltf',
+            './models/classic-ball/scene.glb',
             (_gltf) =>
             {
                 this.classic = _gltf.scene.children[0]
-                this.classic.scale.set(0.1, 0.1, 0.1)
+                this.classic.scale.set(0.09, 0.09, 0.09)
                 this.group.add(this.classic)
             }
         )

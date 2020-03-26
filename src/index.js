@@ -95,7 +95,7 @@ const red = new THREE.MeshLambertMaterial({color : 0x12312a})
 
 
 allen.group.position.x=-16*spaceRatio
-allen.group.position.z=10
+allen.group.position.z=9
 allen.group.scale.set(0.6,0.6,0.6)
 allen.group.rotation.y = 0.2
 scene.add(allen.group)
@@ -136,7 +136,7 @@ ball2Deco5.createStone()
 ball2Deco6.createSphere()
 
 classic.group.position.x=0*spaceRatio
-classic.group.position.z=10
+classic.group.position.z=9
 classic.group.scale.set(0.6,0.6,0.6)
 scene.add(classic.group)
 
