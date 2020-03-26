@@ -44,19 +44,17 @@ const scene = new THREE.Scene()
 /**
  * Lights
  */
-const preciseLight = new THREE.SpotLight ( 0xffffff,2);
-preciseLight.position.set( -300, 210, 150 );
-scene.add( preciseLight );
+const preciseLight = new THREE.SpotLight ( 0xffffff,2)
+preciseLight.position.set( -300, 210, 150 )
+scene.add( preciseLight )
 
-const globalLight = new THREE.AmbientLight( 0xffffff, 0.6);
-globalLight.position.set( -8, -8, 10 );
-scene.add( globalLight );
+const globalLight = new THREE.AmbientLight( 0xffffff, 0.6)
+globalLight.position.set( -8, -8, 10 )
+scene.add( globalLight )
 
-
-
-
-// IL FAUDRA AJOUTER TOUTES LES
-// BALLLES ICI ET REMPLACER LES SPHERES PAR LES BALLES
+/**
+ * Objects
+ */
 
 //Allen Ball
 const allen = new Allen()
@@ -191,7 +189,7 @@ ball7Deco3.createSphere()
 ball7Deco4.createSphere()
 
 /**
-*Date
+*Date typo
 **/
 const material = new THREE.MeshBasicMaterial({
   color: 0x000000,
@@ -254,6 +252,9 @@ window.addEventListener('resize', () =>
 })
 
 
+/** 
+ * Get all objects to switch between them and change elements of the scene 
+ */
 
 renderer.domElement.classList.add('ballCanvas')
 // the textframe changer part
@@ -284,6 +285,15 @@ const sceneSwitcher = ()=>{
 }
 window.addEventListener('click',sceneSwitcher)
 
+textFrameTab.forEach(Element=> {
+    Element.classList.remove('revealInfo')
+})
+
+camera.position.set(sphereFocus.position.x,-1,sphereFocus.position.z+10)
+
+camera.lookAt(sphereFocus.position)
+camera.position.x+=2
+
 /**
  * Scroll between balls with space bar
  */
@@ -292,7 +302,7 @@ document.addEventListener('keyup', (e)=>{
  if(e.keyCode==32){
      sceneSwitcher()
  }
-});
+})
 
 /**
 * Animation ball on scroll
@@ -339,7 +349,7 @@ window.addEventListener('wheel', (_event) => {
                 canScroll = false
                 setTimeout(function() {
                     canScroll = true
-                    console.log(canScroll)
+                    //console.log(canScroll)
                 }, 1000)
                 sceneSwitcher()
 
@@ -382,29 +392,18 @@ window.addEventListener('wheel', (_event) => {
                 canScroll = false
                 setTimeout(function() {
                     canScroll = true
-                    console.log(canScroll)
+                    //console.log(canScroll)
                 }, 1000)
             }
         }
     }
 })
 
-console.log(sphereTab)
+//console.log(sphereTab)
 
-
-textFrameTab.forEach(Element=> {
-    Element.classList.remove('revealInfo')
-})
-
-camera.position.set(sphereFocus.position.x,-1,sphereFocus.position.z+10)
-
-
-camera.lookAt(sphereFocus.position)
-camera.position.x+=2
-
-// /**
-// * Date Animation
-// **/
+/**
+ * Date Animation
+ */
 const date = () =>
 {
     window.requestAnimationFrame(date)
@@ -415,32 +414,50 @@ const date = () =>
     text.position.x = Math.sin(TextAngle) - 10
     text.position.y = Math.sin(Date.now() * 0.001) + 8
 
-    // // Update objects
-    // sphere.rotation.y += 0.002
-    // plane.rotation.y += 0.002
-    // torusKnot.rotation.y += 0.002
-
-    // Animation
-    //mesh.rotation.y += 0.01
-
-    //Camera
-    // camera.position.y = - cursor.y * 2
-    // camera.position.x = cursor.x * 2
-
-    // camera.position.x = Math.cos(cursor.x * Math.PI * 2) * 3
-    // camera.position.z = Math.sin(cursor.x * Math.PI * 2) * 3
-    // camera.position.y = cursor.y * 5
-    // camera.lookAt(scene.position)
-
-    //Camera controls
-    // cameraControls.update()
-
-
     // Render
     renderer.render(scene, camera)
 }
 
 date()
+
+/**
+ * Cursor effect on particles
+ */
+window.addEventListener('click',()=>{
+    console.log(allParticles)
+})
+
+let cursorX
+let cursorY
+let translationX=0
+let targetParticules
+let travel
+let originalPlaceX=[]
+allParticles.forEach(element => {
+    originalPlaceX.push(element.position.x)
+})
+
+// get the curosor position
+window.addEventListener('mousemove',(e)=>{
+    // i had to calm down the cursor strength in term of number size
+     cursorX = e.clientX - 750
+     cursorY = e.clientY - 150
+     translationX=cursorX/500
+    //  animating the 3d smooth ofthe text + the little move of the ball in the back
+})
+
+const particleMove = () => {
+
+    for(let i = 0; i < originalPlaceX.length; i++){
+        targetParticules = originalPlaceX[i]+translationX
+        travel = targetParticules-allParticles[i].position.x
+        allParticles[i].position.x += travel/20
+        //console.log(allParticles[i].position.x,travel,targetParticules)
+        }
+    requestAnimationFrame(particleMove)
+}
+requestAnimationFrame(particleMove)
+// dx =originalPlaceX[i]+translationX
 
 
 /**
@@ -460,45 +477,4 @@ const loop = () =>
     renderer.render(scene, camera)
 
 }
-
 loop()
-window.addEventListener('click',()=>{
-    console.log(allParticles)
-})
-
-let cursorX
-let cursorY
-let translationX=0
-let targetParticules
-let travel
-let originalPlaceX=[]
-allParticles.forEach(element => {
-    originalPlaceX.push(element.position.x)
-});
-
-// get the curosor position
-window.addEventListener('mousemove',(e)=>{
-    // i had to calm down the cursor strength in term of number size
-     cursorX = e.clientX - 750
-     cursorY = e.clientY - 150
-     translationX=cursorX/500
-    //  animating the 3d smooth ofthe text + the little move of the ball in the back
-
-
-})
-
-const particleMove=()=>{
-
-    for(let i=0;i<originalPlaceX.length;i++){
-        targetParticules=originalPlaceX[i]+translationX
-        travel=targetParticules-allParticles[i].position.x
-        allParticles[i].position.x+=travel/20
-        console.log(allParticles[i].position.x,travel,targetParticules)
-        }
-    requestAnimationFrame(particleMove)
-}
-requestAnimationFrame(particleMove)
-
-
-
-// dx =originalPlaceX[i]+translationX

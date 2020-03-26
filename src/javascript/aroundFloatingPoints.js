@@ -25,7 +25,7 @@ class StoneBuild{
                 this.stone.scale.set(stoneSize/2,stoneSize/2,stoneSize/2)
                 allParticles.push(this.stone)
                 this.scene.add(this.stone)
-                console.log("stone created")
+                //console.log("stone created")
     
             }
             this.createSphere=()=>{
@@ -35,7 +35,7 @@ class StoneBuild{
                 this.sphere.scale.set(stoneSize/2,stoneSize/2,stoneSize/2)
                 allParticles.push(this.sphere)
                 this.scene.add(this.sphere)
-                console.log("sphere created")
+                //console.log("sphere created")
 
     
             }
