@@ -4,7 +4,7 @@ import './animationJs/fireballAnimation'
 import './style/main.styl'
 import * as THREE from 'three'
 import Allen from './javascript/Allen.js'
-import Golden from './javascript/Golden.js'
+import Dog from './javascript/Dog.js'
 import Classic from './javascript/Classic.js'
 import Mikasa from './javascript/Mikasa.js'
 import Teamgeist from './javascript/Teamgeist.js'
@@ -62,8 +62,8 @@ const allen = new Allen()
 scene.add(allen.group)
 
 //Golden Ball
-const golden = new Golden()
-scene.add(golden.group)
+const dog = new Dog()
+scene.add(dog.group)
 
 //Mikasa Ball
 const mikasa = new Mikasa()
@@ -109,10 +109,10 @@ ball1Deco2.createStone()
 ball1Deco3.createSphere()
 ball1Deco4.createSphere()
 
-golden.group.position.x=-8*spaceRatio
-golden.group.position.z=10
-golden.group.scale.set(0.6,0.6,0.6)
-scene.add(golden.group)
+dog.group.position.x=-8*spaceRatio
+dog.group.position.z=10
+dog.group.scale.set(0.6,0.6,0.6)
+scene.add(dog.group)
 
 const ball2Deco2=new StoneBuild(scene,-8*spaceRatio-8,-2,5,0.11,"#f48e00")
 const ball2Deco3=new StoneBuild(scene,-6*spaceRatio-7,5,13,0.11,"#cfa911")
@@ -435,7 +435,7 @@ renderer.domElement.classList.add('ballCanvas')
 // the textframe changer part
 const textFrameTab= document.querySelectorAll('.textPlaceHolder')
 // to change the camera focus
-const sphereTab=[allen.group,golden.group,classic.group,mikasa.group,teamgeist.group,jabulani.group,cafusa.group]
+const sphereTab=[allen.group,dog.group,classic.group,mikasa.group,teamgeist.group,jabulani.group,cafusa.group]
 const gradientLayer=document.querySelectorAll('.bgGradientLayer')
 let sphereIncrementation=0
 let sphereFocus= sphereTab[sphereIncrementation]
