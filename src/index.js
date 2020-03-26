@@ -252,8 +252,8 @@ window.addEventListener('resize', () =>
 })
 
 
-/** 
- * Get all objects to switch between them and change elements of the scene 
+/**
+ * Get all objects to switch between them and change elements of the scene
  */
 
 renderer.domElement.classList.add('ballCanvas')
@@ -402,25 +402,6 @@ window.addEventListener('wheel', (_event) => {
 //console.log(sphereTab)
 
 /**
- * Date Animation
- */
-const date = () =>
-{
-    window.requestAnimationFrame(date)
-
-    // Update Text
-    const TextAngle = Date.now() * 0.0000004
-    text.position.z = Math.cos(TextAngle)
-    text.position.x = Math.sin(TextAngle) - 10
-    text.position.y = Math.sin(Date.now() * 0.001) + 8
-
-    // Render
-    renderer.render(scene, camera)
-}
-
-date()
-
-/**
  * Cursor effect on particles
  */
 window.addEventListener('click',()=>{
@@ -467,6 +448,12 @@ requestAnimationFrame(particleMove)
 const loop = () =>
 {
     window.requestAnimationFrame(loop)
+
+    //Update Text 
+    const TextAngle = Date.now() * 0.0000004
+    text.position.z = Math.cos(TextAngle)
+    text.position.x = Math.sin(TextAngle) - 10
+    text.position.y = Math.sin(Date.now() * 0.001) + 8
 
     // Change camera position with cursor
     /*camera.position.x = cursor.x * 40
