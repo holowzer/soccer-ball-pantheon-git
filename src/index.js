@@ -13,7 +13,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {TweenMax,Elastic,SteppedEase} from "gsap"
 import  {allParticles,StoneBuild} from './javascript/aroundFloatingPoints.js'
 var OrbitControls = require('three-orbit-controls')(THREE)
-import font from './style/fonts/Voyage_Regular.json'
+import font from 'three/examples/fonts/droid/droid_serif_regular.typeface.json'
 // import './animationJs/particlesCursor'
 
 /**
@@ -191,8 +191,10 @@ ball7Deco4.createSphere()
 /**
 *Date typo
 **/
+
+//Allen's Text
 const material = new THREE.MeshBasicMaterial({
-  color: 0x000000,
+  color: 0xffffff,
 })
 
 const textGeometry = new THREE.TextGeometry(
@@ -218,6 +220,173 @@ text.rotation.y = 0.2
 
 scene.add(text)
 
+//Ballon d'or's Text
+const material2 = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+})
+
+const textGeometry2 = new THREE.TextGeometry(
+    '1956',
+    {
+        font: new THREE.Font(font),
+        size: 2,
+        height: 0.3,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.1,
+        bevelSize: 0.1,
+        bevelOffset: - 0.08,
+        bevelSegments: 10
+    }
+)
+const text2 = new THREE.Mesh(textGeometry2, material2)
+text2.position.x = -16*spaceRatio
+text2.position.y = 4
+text2.position.z = 7
+text2.rotation.x = 0.2
+text2.rotation.y = 0.2
+
+scene.add(text2)
+
+//Azteca's Text
+const material3 = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+})
+
+const textGeometry3 = new THREE.TextGeometry(
+    '1986',
+    {
+        font: new THREE.Font(font),
+        size: 2,
+        height: 0.3,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.1,
+        bevelSize: 0.1,
+        bevelOffset: - 0.08,
+        bevelSegments: 10
+    }
+)
+const text3 = new THREE.Mesh(textGeometry3, material3)
+text3.position.x = -16*spaceRatio
+text3.position.y = 4
+text3.position.z = 7
+text3.rotation.x = 0.2
+text3.rotation.y = 0.2
+
+scene.add(text3)
+
+//FT-5's Text
+const material4 = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+})
+
+const textGeometry4 = new THREE.TextGeometry(
+    '1994',
+    {
+        font: new THREE.Font(font),
+        size: 2,
+        height: 0.3,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.1,
+        bevelSize: 0.1,
+        bevelOffset: - 0.08,
+        bevelSegments: 10
+    }
+)
+const text4 = new THREE.Mesh(textGeometry4, material4)
+text4.position.x = -16*spaceRatio
+text4.position.y = 4
+text4.position.z = 7
+text4.rotation.x = 0.2
+text4.rotation.y = 0.2
+
+scene.add(text4)
+
+//Teamgeist's Text
+const material5 = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+})
+
+const textGeometry5 = new THREE.TextGeometry(
+    '2006',
+    {
+        font: new THREE.Font(font),
+        size: 2,
+        height: 0.3,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.1,
+        bevelSize: 0.1,
+        bevelOffset: - 0.08,
+        bevelSegments: 10
+    }
+)
+const text5 = new THREE.Mesh(textGeometry5, material5)
+text5.position.x = -16*spaceRatio
+text5.position.y = 4
+text5.position.z = 7
+text5.rotation.x = 0.2
+text5.rotation.y = 0.2
+
+scene.add(text5)
+
+//Jabulani's Text
+const material6 = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+})
+
+const textGeometry6 = new THREE.TextGeometry(
+    '2010',
+    {
+        font: new THREE.Font(font),
+        size: 2,
+        height: 0.3,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.1,
+        bevelSize: 0.1,
+        bevelOffset: - 0.08,
+        bevelSegments: 10
+    }
+)
+const text6 = new THREE.Mesh(textGeometry6, material6)
+text6.position.x = -16*spaceRatio
+text6.position.y = 4
+text6.position.z = 7
+text6.rotation.x = 0.2
+text6.rotation.y = 0.2
+
+scene.add(text6)
+
+//Cafusa's Text
+const material7 = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+})
+
+const textGeometry7 = new THREE.TextGeometry(
+    '2013',
+    {
+        font: new THREE.Font(font),
+        size: 2,
+        height: 0.3,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.1,
+        bevelSize: 0.1,
+        bevelOffset: - 0.08,
+        bevelSegments: 10
+    }
+)
+const text7 = new THREE.Mesh(textGeometry7, material7)
+text7.position.x = -16*spaceRatio
+text7.position.y = 4
+text7.position.z = 7
+text7.rotation.x = 0.2
+text7.rotation.y = 0.2
+
+scene.add(text7)
 
 /**
  * Camera
@@ -449,11 +618,47 @@ const loop = () =>
 {
     window.requestAnimationFrame(loop)
 
-    //Update Text 
-    const TextAngle = Date.now() * 0.0000004
-    text.position.z = Math.cos(TextAngle)
-    text.position.x = Math.sin(TextAngle) - 10
-    text.position.y = Math.sin(Date.now() * 0.001) + 8
+    //Update Allen's Text
+const TextAngle = Date.now() * 0.0000004
+text.position.z = Math.cos(TextAngle)
+text.position.x = Math.sin(TextAngle) - 55
+text.position.y = Math.sin(Date.now() * 0.001) + 8
+
+//Update Ballon d'or's Text
+const TextAngle2 = Date.now() * 0.0000004
+text2.position.z = Math.cos(TextAngle2)
+text2.position.x = Math.sin(TextAngle2) - 30
+text2.position.y = Math.sin(Date.now() * 0.001) + 8
+
+//Update Azteca's Text
+const TextAngle3 = Date.now() * 0.0000004
+text3.position.z = Math.cos(TextAngle3)
+text3.position.x = Math.sin(TextAngle3) - 10
+text3.position.y = Math.sin(Date.now() * 0.001) + 8
+
+//Update FT-5's Text
+const TextAngle4 = Date.now() * 0.0000004
+text4.position.z = Math.cos(TextAngle4)
+text4.position.x = Math.sin(TextAngle4) + 10
+text4.position.y = Math.sin(Date.now() * 0.001) + 8
+
+//Update Teamgeist's Text
+const TextAngle5 = Date.now() * 0.0000004
+text5.position.z = Math.cos(TextAngle5)
+text5.position.x = Math.sin(TextAngle5) + 40
+text5.position.y = Math.sin(Date.now() * 0.001) + 8
+
+//Update Jabulani's Text
+const TextAngle6 = Date.now() * 0.0000004
+text6.position.z = Math.cos(TextAngle6)
+text6.position.x = Math.sin(TextAngle6) + 60
+text6.position.y = Math.sin(Date.now() * 0.001) + 8
+
+//Update Cafuna's Text
+const TextAngle7 = Date.now() * 0.0000004
+text7.position.z = Math.cos(TextAngle7)
+text7.position.x = Math.sin(TextAngle7) + 90
+text7.position.y = Math.sin(Date.now() * 0.001) + 8
 
     // Change camera position with cursor
     /*camera.position.x = cursor.x * 40
