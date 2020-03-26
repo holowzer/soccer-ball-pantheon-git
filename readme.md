@@ -1,30 +1,37 @@
-A HISTORICAL 3D WEBSITE  - - - - - - - - - -
+# THE PELOTA EXPERIENCE
 
 Football is the mostplayed sport and has been analyzed from every perspective.
-we simply decided to trace the story of this mass sport via the most important ingredient of a goood soccer game... THE BALL
+we simply decided to trace the story of this mass sport via the most important ingredient of a good soccer game... THE BALL.
+
 You'll see in this website the history behind some of the most iconic soccer ball.
 the most incredible matches, the most emotionnal stories brought thanks to a simple ball..
 
 
-stay tuned and follow the experience !
+## The website
+
+Just here ! https://liendusite.fr/
+
+## Team
 
 
-TOOLS - - - - - - - - - -
+* [Andy Chea](https://github.com/andychea)
+* [Gaëtan Dupont](https://github.com/GaetanDupont)
+* [Tina El Hawa](https://github.com/TinaElh)
+* [Arthur Lasnel](https://github.com/holowzer)
+* [Sandro Raspaldo Morales](https://github.com/SandroHerveRaspaldo)
 
-scenejs , stylus
+## Tools
 
-js,css,html
-
-webpack config
-
-webGL and ThreeJs
-
+* JS, CSS, HTML
+* Scenejs, Stylus
+* Webpack config
+* WebGL and ThreeJs
 
 
-fonts used : 
+## Fonts used
 
-MANROPE found on AWWWARDS WEBSITE https://www.awwwards.com/sites/manrope-font
+* [MANROPE](https://www.awwwards.com/sites/manrope-font)
 
-BON VOYAGE https://www.dafont.com/made-bon-voyage.font
+* [BON VOYAGE](https://www.dafont.com/made-bon-voyage.font)
 
-take care of these ;)
+Take care of these :wink:
