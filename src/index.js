@@ -13,6 +13,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {TweenMax,Elastic,SteppedEase} from "gsap"
 import  {allParticles,StoneBuild} from './javascript/aroundFloatingPoints.js'
 var OrbitControls = require('three-orbit-controls')(THREE)
+import font from './style/fonts/Voyage_Regular.json'
 // import './animationJs/particlesCursor'
 
 /**
@@ -54,8 +55,8 @@ scene.add( globalLight );
 
 
 
-// IL FAUDRA AJOUTER TOUTES LES 
-// BALLLES ICI ET REMPLACER LES SPHERES PAR LES BALLES 
+// IL FAUDRA AJOUTER TOUTES LES
+// BALLLES ICI ET REMPLACER LES SPHERES PAR LES BALLES
 
 //Allen Ball
 const allen = new Allen()
@@ -189,6 +190,36 @@ ball7Deco2.createStone()
 ball7Deco3.createSphere()
 ball7Deco4.createSphere()
 
+/**
+*Date
+**/
+const material = new THREE.MeshBasicMaterial({
+  color: 0x000000,
+})
+
+const textGeometry = new THREE.TextGeometry(
+    '1930',
+    {
+        font: new THREE.Font(font),
+        size: 2,
+        height: 0.3,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.1,
+        bevelSize: 0.1,
+        bevelOffset: - 0.08,
+        bevelSegments: 10
+    }
+)
+const text = new THREE.Mesh(textGeometry, material)
+text.position.x = -16*spaceRatio
+text.position.y = 4
+text.position.z = 7
+text.rotation.x = 0.2
+text.rotation.y = 0.2
+
+scene.add(text)
+
 
 /**
  * Camera
@@ -202,7 +233,7 @@ scene.add(camera)
 /**
  * Renderer
  */
-const renderer = new THREE.WebGLRenderer({antialias : true,alpha: true })  
+const renderer = new THREE.WebGLRenderer({antialias : true,alpha: true })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setClearColor('#111654',0)
@@ -228,7 +259,7 @@ renderer.domElement.classList.add('ballCanvas')
 // the textframe changer part
 const textFrameTab= document.querySelectorAll('.textPlaceHolder')
 // to change the camera focus
-const sphereTab=[allen.group,golden.group,classic.group,mikasa.group,teamgeist.group,sphere6,cafusa.group] 
+const sphereTab=[allen.group,golden.group,classic.group,mikasa.group,teamgeist.group,sphere6,cafusa.group]
 const gradientLayer=document.querySelectorAll('.bgGradientLayer')
 let sphereIncrementation=0
 let sphereFocus= sphereTab[sphereIncrementation]
@@ -240,8 +271,8 @@ const sceneSwitcher = ()=>{
             Element.classList.add('bgHidden')
         })
         gradientLayer[sphereIncrementation].classList.remove('bgHidden')
-     
-    } 
+
+    }
     else{
 
         gradientLayer.forEach(Element=> {
@@ -254,7 +285,7 @@ const sceneSwitcher = ()=>{
 window.addEventListener('click',sceneSwitcher)
 
 /**
- * Scroll between balls with space bar 
+ * Scroll between balls with space bar
  */
 
 document.addEventListener('keyup', (e)=>{
@@ -288,18 +319,18 @@ window.addEventListener('wheel', (_event) => {
                 textFrameTab.forEach(Element=> {
                     Element.classList.remove('revealInfo')
                 })
-    
+
                 setTimeout(() => {
-                    textFrameTab[sphereIncrementation].classList.toggle('revealInfo')  
+                    textFrameTab[sphereIncrementation].classList.toggle('revealInfo')
                 }, 1000)
-        
+
                 sphereFocus = sphereTab[sphereIncrementation]
                 TweenMax.to(
                     camera.position,
                     1,
                     {
                         x:sphereFocus.position.x+2,
-                        y:0,z:sphereFocus.position.z+10, 
+                        y:0,z:sphereFocus.position.z+10,
                         ease: Elastic.easeOut.config(0.5, 0.3)
                     }
                 )
@@ -329,9 +360,9 @@ window.addEventListener('wheel', (_event) => {
 
                 sphereIncrementation --
                 setTimeout(() => {
-                    textFrameTab[sphereIncrementation].classList.toggle('revealInfo')  
+                    textFrameTab[sphereIncrementation].classList.toggle('revealInfo')
                 }, 800)
-        
+
                 sphereFocus= sphereTab[sphereIncrementation]
                 TweenMax.to(
                     camera.position,
@@ -339,11 +370,11 @@ window.addEventListener('wheel', (_event) => {
                     {
                         x:sphereFocus.position.x+2,
                         y:0,
-                        z:sphereFocus.position.z+10, 
-                        ease: Elastic.easeOut.config(0.5, 0.3) 
+                        z:sphereFocus.position.z+10,
+                        ease: Elastic.easeOut.config(0.5, 0.3)
                     },
                     sceneSwitcher()
-                    
+
 
                 )
 
@@ -371,6 +402,46 @@ camera.position.set(sphereFocus.position.x,-1,sphereFocus.position.z+10)
 camera.lookAt(sphereFocus.position)
 camera.position.x+=2
 
+// /**
+// * Date Animation
+// **/
+const date = () =>
+{
+    window.requestAnimationFrame(date)
+
+    // Update Text
+    const TextAngle = Date.now() * 0.0000004
+    text.position.z = Math.cos(TextAngle)
+    text.position.x = Math.sin(TextAngle) - 10
+    text.position.y = Math.sin(Date.now() * 0.001) + 8
+
+    // // Update objects
+    // sphere.rotation.y += 0.002
+    // plane.rotation.y += 0.002
+    // torusKnot.rotation.y += 0.002
+
+    // Animation
+    //mesh.rotation.y += 0.01
+
+    //Camera
+    // camera.position.y = - cursor.y * 2
+    // camera.position.x = cursor.x * 2
+
+    // camera.position.x = Math.cos(cursor.x * Math.PI * 2) * 3
+    // camera.position.z = Math.sin(cursor.x * Math.PI * 2) * 3
+    // camera.position.y = cursor.y * 5
+    // camera.lookAt(scene.position)
+
+    //Camera controls
+    // cameraControls.update()
+
+
+    // Render
+    renderer.render(scene, camera)
+}
+
+date()
+
 
 /**
  * Loop
@@ -380,7 +451,7 @@ const loop = () =>
 {
     window.requestAnimationFrame(loop)
 
-    // Change camera position with cursor 
+    // Change camera position with cursor
     /*camera.position.x = cursor.x * 40
     camera.position.y = - cursor.y * 40
     camera.lookAt(scene.position)*/
@@ -395,7 +466,7 @@ window.addEventListener('click',()=>{
     console.log(allParticles)
 })
 
-let cursorX 
+let cursorX
 let cursorY
 let translationX=0
 let targetParticules
@@ -405,7 +476,7 @@ allParticles.forEach(element => {
     originalPlaceX.push(element.position.x)
 });
 
-// get the curosor position 
+// get the curosor position
 window.addEventListener('mousemove',(e)=>{
     // i had to calm down the cursor strength in term of number size
      cursorX = e.clientX - 750
