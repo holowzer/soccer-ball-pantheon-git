@@ -19,7 +19,7 @@ export default class Jabulani
             (_gltf) =>
             {
                 this.jabulani = _gltf.scene.children[0]
-                this.jabulani.scale.set(0.55, 0.55, 0.55)
+                this.jabulani.scale.set(0.51, 0.51, 0.51)
                 this.group.add(this.jabulani)
             }
         )

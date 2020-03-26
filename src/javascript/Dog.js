@@ -19,7 +19,7 @@ export default class Dog
             (_gltf) =>
             {
                 this.dog = _gltf.scene.children[0]
-                this.dog.scale.set(0.03, 0.03, 0.03)
+                this.dog.scale.set(0.035, 0.035, 0.035)
                 this.group.add(this.dog)
             }
         )
