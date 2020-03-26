@@ -60,6 +60,16 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(mp3|ogg)$/,
+                use: 
+                [
+                    {
+                        loader: 'file-loader',
+                        options: { outputPath:'audio/' } 
+                    }
+                ]
+            },
+            {
                 test: /\.(ttf|otf|woff|woff2|eot)$/,
                 use:
                 [
