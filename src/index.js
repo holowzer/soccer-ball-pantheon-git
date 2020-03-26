@@ -250,7 +250,7 @@ scene.add(text)
 
 
 const textGeometry2 = new THREE.TextGeometry(
-    '1956',
+    '1947',
     {
         font: new THREE.Font(font),
         size: 2,
@@ -538,7 +538,7 @@ window.addEventListener('wheel', (_event) => {
                 setTimeout(function() {
                     canScroll = true
                     //console.log(canScroll)
-                }, 1000)
+                }, 2000)
                 sceneSwitcher()
 
             }
@@ -582,7 +582,7 @@ window.addEventListener('wheel', (_event) => {
                 setTimeout(function() {
                     canScroll = true
                     //console.log(canScroll)
-                }, 1000)
+                }, 2000)
             }
         }
     }
