@@ -15,7 +15,7 @@ export default class Jabulani
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/jabulani-ball/scene.glb',
+            './models/jabulani-ball/scene.glb',
             (_gltf) =>
             {
                 this.jabulani = _gltf.scene.children[0]

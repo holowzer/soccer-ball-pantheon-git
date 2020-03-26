@@ -15,7 +15,7 @@ export default class Golden
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/golden-ball/scene.glb',
+            './models/golden-ball/scene.glb',
             (_gltf) =>
             {
                 this.golden = _gltf.scene.children[0]

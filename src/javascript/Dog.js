@@ -15,7 +15,7 @@ export default class Dog
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/dog-ball/scene.glb',
+            './models/dog-ball/scene.glb',
             (_gltf) =>
             {
                 this.dog = _gltf.scene.children[0]

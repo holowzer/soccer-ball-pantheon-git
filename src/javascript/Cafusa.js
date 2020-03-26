@@ -15,7 +15,7 @@ export default class Cafusa
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/cafusa-ball/scene.glb',
+            './models/cafusa-ball/scene.glb',
             (_gltf) =>
             {
                 this.cafusa = _gltf.scene.children[0]
