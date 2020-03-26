@@ -8,6 +8,7 @@ import Golden from './javascript/Golden.js'
 import Classic from './javascript/Classic.js'
 import Mikasa from './javascript/Mikasa.js'
 import Teamgeist from './javascript/Teamgeist.js'
+import Jabulani from './javascript/Jabulani.js'
 import Cafusa from './javascript/Cafusa.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {TweenMax,Elastic,SteppedEase} from "gsap"
@@ -76,6 +77,10 @@ scene.add(classic.group)
 const teamgeist = new Teamgeist()
 scene.add(teamgeist.group)
 
+//Jabulani Ball
+const jabulani = new Jabulani()
+scene.add(jabulani.group)
+
 //Cafusa Ball
 const cafusa = new Cafusa()
 scene.add(cafusa.group)
@@ -86,7 +91,6 @@ const spaceRatio= 3
 const sphereGeo = new THREE.SphereGeometry(5,32,32)
 const blue = new THREE.MeshLambertMaterial({color : 0x552227})
 const red = new THREE.MeshLambertMaterial({color : 0x12312a})
-const sphere6 =  new THREE.Mesh(sphereGeo,red)
 
 
 allen.group.position.x=-16*spaceRatio
@@ -159,10 +163,12 @@ ball5Deco3.createSphere()
 ball5Deco4.createSphere()
 
 
-sphere6.position.x=24*spaceRatio
-sphere6.position.z=10
-sphere6.scale.set(0.6,0.6,0.6)
-scene.add(sphere6)
+jabulani.group.position.x=24*spaceRatio
+jabulani.group.position.y=-3.6
+jabulani.group.position.z=10
+jabulani.group.rotation.y=4.5
+jabulani.group.scale.set(0.6,0.6,0.6)
+scene.add(jabulani.group)
 
 
 const ball6Deco1=new StoneBuild(scene,24*spaceRatio+6,1,14,0.3,"#0061ad")
@@ -429,7 +435,7 @@ renderer.domElement.classList.add('ballCanvas')
 // the textframe changer part
 const textFrameTab= document.querySelectorAll('.textPlaceHolder')
 // to change the camera focus
-const sphereTab=[allen.group,golden.group,classic.group,mikasa.group,teamgeist.group,sphere6,cafusa.group]
+const sphereTab=[allen.group,golden.group,classic.group,mikasa.group,teamgeist.group,jabulani.group,cafusa.group]
 const gradientLayer=document.querySelectorAll('.bgGradientLayer')
 let sphereIncrementation=0
 let sphereFocus= sphereTab[sphereIncrementation]
