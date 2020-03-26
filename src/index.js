@@ -87,7 +87,7 @@ scene.add(cafusa.group)
 
 
 
-const spaceRatio= 3
+const spaceRatio= 5
 const sphereGeo = new THREE.SphereGeometry(5,32,32)
 const blue = new THREE.MeshLambertMaterial({color : 0x552227})
 const red = new THREE.MeshLambertMaterial({color : 0x12312a})
@@ -602,6 +602,9 @@ window.addEventListener('mousemove',(e)=>{
     //  animating the 3d smooth ofthe text + the little move of the ball in the back
 })
 
+// making the particles move with a little easing on mouse move 
+
+
 const particleMove = () => {
 
     for(let i = 0; i < originalPlaceX.length; i++){
@@ -613,7 +616,6 @@ const particleMove = () => {
     requestAnimationFrame(particleMove)
 }
 requestAnimationFrame(particleMove)
-// dx =originalPlaceX[i]+translationX
 
 
 /**
