@@ -38,7 +38,7 @@ const FakeLoad = new Scene({
         0:{
             opacity : 1
         },
-        3.2:{
+        4.2:{
             opacity : 1
         },
         5.6:{
@@ -52,7 +52,7 @@ const FakeLoad = new Scene({
         3.2:{
             opacity : 1
         },
-        3.6:{
+        4.6:{
             opacity : 0
         },
     },
