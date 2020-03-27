@@ -146,13 +146,13 @@ const restart=document.querySelector('.endingButton')
 
 
 restart.addEventListener('mousedown',()=>{
-document.querySelector('.happyEnding').classList.add('goUpstairs')
+document.querySelector('.happyEnding').classList.remove('goUpstairs')
 })
 // exit.addEventListener('mousedown',ExperienceEnding.playCSS)
 
 
 exit.addEventListener('mousedown',()=>{
     console.log('nossss')
-    document.querySelector('.happyEnding').classList.remove('goUpstairs')
+    document.querySelector('.happyEnding').classList.add('goUpstairs')
 })
 

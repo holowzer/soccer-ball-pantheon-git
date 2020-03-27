@@ -52,7 +52,7 @@ body
             // display none if you want to work directly on the 3D scene ;)
             // 
             // 
-            display none
+            display flex
             justify-content center
             align-items center
             flex-direction column
@@ -85,7 +85,7 @@ body
         // display none if you want to work directly on the 3D scene ;)
         // 
         // 
-        display none
+        display flex
         width 100%
         position relative
         z-index 500
@@ -269,8 +269,8 @@ body
     height 100%
     position absolute
     top 0
-    opacity 1
-    transform translateY(0)
+    opacity 0
+    transform translateY(100vh)
     display flex
     justify-content center
     flex-direction column
@@ -305,5 +305,10 @@ body
     pointer-events auto
     }
     .goUpstairs
-        transform translateY(100vh)
-        opacity 0
+        transform translateY(0)
+        opacity 1
+
+
+.beginExperience{
+    bottom: 30px
+    }
