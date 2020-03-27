@@ -46,12 +46,12 @@ const scene = new THREE.Scene()
 /**
  * Lights
  */
-const preciseLight = new THREE.SpotLight ( 0x0707ea,2)
-preciseLight.position.set( -40, 2, 32 )
+const preciseLight = new THREE.SpotLight ( 0xffffff,2)
+preciseLight.position.set( -300, 10, 90 )
 scene.add( preciseLight )
 
-const globalLight = new THREE.AmbientLight( 0xffffff, 1.5)
-globalLight.position.set( -80, 8, 10 )
+const globalLight = new THREE.AmbientLight( 0xffebd7, 0.3)
+globalLight.position.set( -8, -8, 10 )
 scene.add( globalLight )
 
 /**
