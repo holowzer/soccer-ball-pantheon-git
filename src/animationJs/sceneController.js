@@ -133,7 +133,7 @@ document.querySelector('.experienceStarter').addEventListener('click', ()=>{
     ExperienceStarter.playCSS()
     setTimeout(() => {
        document.querySelector('.ball1Text').classList.add('revealInfo')  
-    }, 2600);
+    }, 2600)
 })
 
 
