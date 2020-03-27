@@ -46,12 +46,12 @@ const scene = new THREE.Scene()
 /**
  * Lights
  */
-const preciseLight = new THREE.SpotLight ( 0xffffff,2)
-preciseLight.position.set( -300, 210, 150 )
+const preciseLight = new THREE.SpotLight ( 0x0707ea,2)
+preciseLight.position.set( -40, 2, 32 )
 scene.add( preciseLight )
 
-const globalLight = new THREE.AmbientLight( 0xffffff, 0.6)
-globalLight.position.set( -8, -8, 10 )
+const globalLight = new THREE.AmbientLight( 0xffffff, 1.5)
+globalLight.position.set( -80, 8, 10 )
 scene.add( globalLight )
 
 /**
@@ -464,7 +464,6 @@ const sceneSwitcher = ()=>{
 
     }
 }
-window.addEventListener('click',sceneSwitcher)
 
 textFrameTab.forEach(Element=> {
     Element.classList.remove('revealInfo')
@@ -476,12 +475,81 @@ camera.lookAt(sphereFocus.position)
 camera.position.x+=2
 
 /**
- * Scroll between balls with space bar
+ * Scroll between balls with keyB arrow
  */
 
 document.addEventListener('keyup', (e)=>{
  if(e.keyCode==32){
-     sceneSwitcher()
+     keySwitcher()
+ }
+ else if(e.keyCode==37){
+     console.log("less")
+     if(sphereIncrementation > 0)
+     {
+         textFrameTab.forEach(Element=> {
+             Element.classList.remove('revealInfo')
+         })
+
+
+         sphereIncrementation --
+         setTimeout(() => {
+             textFrameTab[sphereIncrementation].classList.toggle('revealInfo')
+         }, 800)
+
+         sphereFocus= sphereTab[sphereIncrementation]
+         TweenMax.to(
+             camera.position,
+             2,
+             {
+                 x:sphereFocus.position.x+2,
+                 y:0,
+                 z:sphereFocus.position.z+10,
+                 ease: Elastic.easeOut.config(0.5, 0.3)
+             },
+             sceneSwitcher()
+         )
+
+         ballSound.play()
+         ballSound.currentTime = 0
+
+     }
+
+ }
+
+
+
+
+
+ else if(e.keyCode==39){
+     console.log("more")
+     if(sphereIncrementation < sphereTab.length-1)
+     {
+         sphereIncrementation++
+
+         textFrameTab.forEach(Element=> {
+             Element.classList.remove('revealInfo')
+         })
+
+         setTimeout(() => {
+             textFrameTab[sphereIncrementation].classList.toggle('revealInfo')
+         }, 1000)
+
+         sphereFocus = sphereTab[sphereIncrementation]
+         TweenMax.to(
+             camera.position,
+             2,
+             {
+                 x:sphereFocus.position.x+2,
+                 y:0,z:sphereFocus.position.z+10,
+                 ease: Elastic.easeOut.config(0.5, 0.3)
+             }
+         )
+
+         ballSound.play()
+         ballSound.currentTime = 0
+         sceneSwitcher()
+
+     }
  }
 })
 
@@ -612,7 +680,7 @@ window.addEventListener('mousemove',(e)=>{
     // i had to calm down the cursor strength in term of number size
      cursorX = e.clientX - 750
      cursorY = e.clientY - 150
-     translationX=cursorX/500
+     translationX=cursorX/100
     //  animating the 3d smooth ofthe text + the little move of the ball in the back
 })
 
@@ -624,7 +692,7 @@ const particleMove = () => {
     for(let i = 0; i < originalPlaceX.length; i++){
         targetParticules = originalPlaceX[i]+translationX
         travel = targetParticules-allParticles[i].position.x
-        allParticles[i].position.x += travel/20
+        allParticles[i].position.x += travel/30
         //console.log(allParticles[i].position.x,travel,targetParticules)
         }
     requestAnimationFrame(particleMove)
