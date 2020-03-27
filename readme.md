@@ -34,7 +34,7 @@ Just here ! https://holowzer.github.io/PELOTA/index.html
 
 * [BON VOYAGE](https://www.dafont.com/made-bon-voyage.font)
 
-Take care of these :wink:
+Take a look at these :wink:
 
 ## Inspirations
 
