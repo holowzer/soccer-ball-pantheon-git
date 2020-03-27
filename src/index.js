@@ -662,7 +662,6 @@ window.addEventListener('wheel', (_event) => {
  * Cursor effect on particles
  */
 window.addEventListener('click',()=>{
-    console.log(allParticles)
 })
 
 let cursorX
@@ -753,3 +752,33 @@ text7.position.y = Math.sin(Date.now() * 0.001) + 5
 
 }
 loop()
+
+
+
+
+
+document.querySelector('.endingButton').addEventListener('mousedown',()=>{
+                textFrameTab.forEach(Element=> {
+                    Element.classList.remove('revealInfo')
+                })
+
+
+                sphereIncrementation =0
+                setTimeout(() => {
+                    textFrameTab[sphereIncrementation].classList.toggle('revealInfo')
+                }, 800)
+
+                sphereFocus= sphereTab[sphereIncrementation]
+                TweenMax.to(
+                    camera.position,
+                    2,
+                    {
+                        x:sphereFocus.position.x+2,
+                        y:0,
+                        z:sphereFocus.position.z+10,
+                        ease: Elastic.easeOut.config(0.5, 0.3)
+                    },
+                    sceneSwitcher()
+                )
+            
+})

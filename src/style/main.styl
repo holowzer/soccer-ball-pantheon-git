@@ -5,6 +5,28 @@
   font-family "manrope"    
   src url("./fonts/Manrope-Regular.ttf")
 
+.experienceStarter
+    border-radius 1000px
+    border  rgba(15,70,0,1) 2px solid 
+    transition: all 0.2s ease-out
+    background #000
+    display flex
+    justify-content center  
+    align-items center
+    color white
+    width 120px
+    height 120px
+    position absolute
+    font-size 12px
+    right 60px
+    cursor pointer
+    bottom 60px
+     .experienceStarter:hover
+         border  #65c94b 2px solid 
+
+
+
+
 html
 body
     position fixed
@@ -27,10 +49,10 @@ body
             transform translateY(0)
             width 100%
             height 100%
-            // todelete 
+            // display none if you want to work directly on the 3D scene ;)
             // 
             // 
-            display flex
+            display none
             justify-content center
             align-items center
             flex-direction column
@@ -60,10 +82,10 @@ body
 
     .globalWindow
         background #000 
-        // to deleete 
+        // display none if you want to work directly on the 3D scene ;)
         // 
         // 
-        display flex
+        display none
         width 100%
         position relative
         z-index: 500
@@ -99,24 +121,6 @@ body
             flex-direction column
             perspective 600px
             align-items center
-            .experienceStarter
-                border-radius 1000px
-                border  rgba(15,70,0,1) 2px solid 
-                transition: all 0.2s ease-out
-                background #000
-                display flex
-                justify-content center
-                align-items center
-                color white
-                width 120px
-                height 120px
-                position absolute
-                font-size 12px
-                right 60px
-                cursor pointer
-                bottom 60px
-            .experienceStarter:hover
-                                border  #65c94b 2px solid 
 
             h2
                 font-size 120px
@@ -218,6 +222,24 @@ body
     top 0 
     left 0
     display flex
+    .exitButton
+        border-radius: 1000px;
+        border: #0f4600 2px solid;
+        transition: all 0.2s ease-out;
+        background: transparent; 
+        display: flex;
+        justify-content: center;
+        z-index: 10001
+        align-items: center;
+        color: #fff;
+        width: 120px;
+        top: 28px;
+        height: 120px;
+        position: absolute;
+        font-size: 12px;
+        right: 30px;
+        cursor: pointer;
+
     .leftInfo
         left 10px
         bottom -30px
@@ -242,9 +264,46 @@ body
     
 
 
+.happyEnding
+    width 100%
+    height 100%
+    position absolute
+    top: 0
+    opacity: 1
+    transform: translateY(0)
+    display flex
+    justify-content: center
+    flex-direction: column
+    transition: all 0.3s ease
+    align-items: center
+    left 0
+    background black
+    z-index 1000
+    h2
+        font-size 5em 
+        text-align: center
+        font-size: 72px;
+        background: -webkit-linear-gradient(#eee, #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width 800px
+    .endingButton
+        position relative
+        text-transform: uppercase
+        right auto
+        bottom auto
+
+
 
 
 
 
 .revealInfo
     opacity 1
+
+.exitButton{
+    pointer-events auto
+    }
+    .goUpstairs
+        transform: translateY(100vh)
+        opacity: 0

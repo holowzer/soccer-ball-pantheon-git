@@ -13,13 +13,19 @@ const FakeLoad = new Scene({
         1 : {
             transform : "translateX(50px)"
         },
-        1.3 : {
+        2.3 : {
             transform : "translateX(110px)"
         },
         2.5 : {
             transform : "translateX(200px)"
         },
-        5.6 : {
+        6.5 : {
+            transform : "translateX(220px)"
+        },
+        10.5 : {
+            transform : "translateX(250px)"
+        },
+        15.6 : {
             transform : "translateX(300px)"
         },
     },
@@ -27,10 +33,10 @@ const FakeLoad = new Scene({
         0:{
             transform : "translateY(0)",
         },
-        5.9:{
+        14.6:{
             transform : "translateY(0)",
         },
-        6.1:{
+        15.1:{
             transform : "translateY(-100vh)",
         },
     },
@@ -38,10 +44,10 @@ const FakeLoad = new Scene({
         0:{
             opacity : 1
         },
-        4.2:{
+        14.9:{
             opacity : 1
         },
-        5.6:{
+        15.3:{
             opacity : 0
         },
     },
@@ -49,10 +55,10 @@ const FakeLoad = new Scene({
         0:{
             opacity : 1
         },
-        3.2:{
+        13.2:{
             opacity : 1
         },
-        4.6:{
+        14.9:{
             opacity : 0
         },
     },
@@ -61,12 +67,12 @@ const FakeLoad = new Scene({
             opacity : 0,
             transform : "translateY(-50px)"
         },
-        4.3:{
+        14.9:{
             opacity : 0,
             transform : "translateY(-50px)"
 
         },
-        5:{
+        15.3:{
             opacity : 1,
             transform : "translateY(0px)"
 
@@ -129,3 +135,24 @@ document.querySelector('.experienceStarter').addEventListener('click', ()=>{
        document.querySelector('.ball1Text').classList.add('revealInfo')  
     }, 2600);
 })
+
+
+
+
+const exit=document.querySelector('.exitButton')
+const restart=document.querySelector('.endingButton')
+
+
+
+
+restart.addEventListener('mousedown',()=>{
+document.querySelector('.happyEnding').classList.add('goUpstairs')
+})
+// exit.addEventListener('mousedown',ExperienceEnding.playCSS)
+
+
+exit.addEventListener('mousedown',()=>{
+    console.log('nossss')
+    document.querySelector('.happyEnding').classList.remove('goUpstairs')
+})
+
