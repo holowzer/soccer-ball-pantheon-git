@@ -51,7 +51,7 @@ preciseLight.position.set( -300, 10, 90 )
 scene.add( preciseLight )
 
 const globalLight = new THREE.AmbientLight( 0xffebd7, 0.3)
-globalLight.position.set( -7, -8, 10 )
+globalLight.position.set( -8, -8, 10 )
 scene.add( globalLight )
 
 /**
