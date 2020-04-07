@@ -3,7 +3,6 @@ import './animationJs/sceneController'
 import './animationJs/fireballAnimation'
 import './style/main.styl'
 import * as THREE from 'three'
-import Allen from './javascript/Allen.js'
 import Dog from './javascript/Dog.js'
 import Classic from './javascript/Classic.js'
 import Mikasa from './javascript/Mikasa.js'
@@ -58,9 +57,7 @@ scene.add( globalLight )
  * Objects
  */
 
-//Allen Ball
-const allen = new Allen()
-scene.add(allen.group)
+
 
 //Golden Ball
 const dog = new Dog()
