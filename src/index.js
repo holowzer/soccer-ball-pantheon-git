@@ -91,11 +91,6 @@ const blue = new THREE.MeshLambertMaterial({color : 0x552227})
 const red = new THREE.MeshLambertMaterial({color : 0x12312a})
 
 
-allen.group.position.x=-16*spaceRatio
-allen.group.position.z=9
-allen.group.scale.set(0.6,0.6,0.6)
-allen.group.rotation.y = 0.2
-scene.add(allen.group)
 
 
 const ball1Deco1=new StoneBuild(scene,-16*spaceRatio+6,1,2,0.3,"#0061ad")
@@ -438,7 +433,7 @@ renderer.domElement.classList.add('ballCanvas')
 // the textframe changer part
 const textFrameTab= document.querySelectorAll('.textPlaceHolder')
 // to change the camera focus
-const sphereTab=[allen.group,dog.group,classic.group,mikasa.group,teamgeist.group,jabulani.group,cafusa.group]
+const sphereTab=[dog.group,classic.group,mikasa.group,teamgeist.group,jabulani.group,cafusa.group]
 const gradientLayer=document.querySelectorAll('.bgGradientLayer')
 let sphereIncrementation=0
 let sphereFocus= sphereTab[sphereIncrementation]

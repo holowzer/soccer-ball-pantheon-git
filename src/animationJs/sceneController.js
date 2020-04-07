@@ -132,7 +132,7 @@ const ExperienceStarter= new Scene({
 document.querySelector('.experienceStarter').addEventListener('click', ()=>{
     ExperienceStarter.playCSS()
     setTimeout(() => {
-       document.querySelector('.ball1Text').classList.add('revealInfo')  
+       document.querySelector('.ball2Text').classList.add('revealInfo')  
     }, 2600)
 })
 
