@@ -556,7 +556,7 @@ ballSound.volume = 0.5
 // Set the scroll
 let canScroll = true
 
-window.addEventListener('wheel', (_event) => {
+window.addEventListener('scroll', (_event) => {
     //_event.preventDefault()
 
     // Accept the scroll
@@ -774,3 +774,7 @@ document.querySelector('.endingButton').addEventListener('mousedown',()=>{
                 )
             
 })
+if (screen.width <= 600) {
+
+console.log('pdde ta mer')
+}
